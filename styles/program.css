@@ -116,7 +116,7 @@ footer {
 .session {
 	padding: 5px;
 	font-size: 1rem;
-	min-width: 2000px;
+	min-width: 200px;
 	border-left: 2px solid #002441;
 
 	background-color: rgba(0,0,0,0.75);

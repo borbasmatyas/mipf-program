@@ -16,7 +16,7 @@ $last = strtotime(end($jsonData[0]['programs'])['endTime']);  // Utolsó program
 
 $v_space = '5fr';
 $end_space = '10px';
-$gap = '10'; // percek
+$gap = '1'; // percek
 $timing_space = '10px';
 
 echo '
