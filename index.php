@@ -5,6 +5,8 @@ require_once ('e/config/config.php');
 ob_start();
 session_start();
 
+$allow = true;
+
 require_once ('e/modules/pages/pages.php');
 
 header('X-Robots-Tag: noindex, nofollow, noarchive');
