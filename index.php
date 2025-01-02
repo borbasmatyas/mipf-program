@@ -131,7 +131,6 @@ if($page['name'] == 'program' and isset($_POST)) {
 					<img src="/images/logo.png">
 				</a>
 
-				<?php include('./e/includes/_menu.php'); ?>
 
 			</header>
 			<main>
@@ -170,6 +169,6 @@ if($page['name'] == 'program' and isset($_POST)) {
 <?php
 
 
-$mysqli->close();
+
 
 ?>
