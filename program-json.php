@@ -47,11 +47,26 @@ foreach ($locations as $location) {
     // Programok beolvasása
     $programs = [];
     $programItems = $xpath->query('.//article[contains(@class, "programs-item")]', $location);
+    $currentDateTime = new DateTime("$eventDate $startTime");
     foreach ($programItems as $program) {
         $time = $xpath->query('.//span', $program)->item(0)->textContent;
         $title = $xpath->query('.//h3', $program)->item(0)->textContent;
+
+        // Kezdési időpont kiszámítása
+        $programStartTime = DateTime::createFromFormat('H:i', trim($time));
+        if ($programStartTime < new DateTime($startTime)) {
+            $currentDateTime->modify('+1 day');
+        }
+        $programStartDateTime = clone $currentDateTime;
+        $programStartDateTime->setTime($programStartTime->format('H'), $programStartTime->format('i'));
+
+        // Befejezési időpont kiszámítása
+        $programEndDateTime = clone $programStartDateTime;
+        $programEndDateTime->modify("+$eventLength minutes");
+
         $programs[] = [
-            'time' => trim($time),
+            'startTime' => $programStartDateTime->format('Y-m-d H:i'),
+            'endTime' => $programEndDateTime->format('Y-m-d H:i'),
             'title' => trim($title)
         ];
     }
@@ -68,3 +83,4 @@ foreach ($locations as $location) {
 // JSON generálása
 header('Content-Type: application/json; charset=utf-8');
 echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+?>
