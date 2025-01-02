@@ -6,6 +6,7 @@ ob_start();
 session_start();
 
 $allow = true;
+$return_json = true;
 
 require_once ('e/modules/pages/pages.php');
 

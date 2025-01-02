@@ -80,15 +80,15 @@ foreach ($locations as $location) {
     ];
 }
 
-// Ha van egy ?raw paraméter, akkor a JSON-t adjuk vissza
-if (isset($_GET['raw'])) {
-    header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($raw_json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    exit;
-} else {
+
+if (isset($return_json)) {
     // JSON állomány létrehozása
     $raw_json = json_encode($json_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-   
+} else {
+
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($json_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    exit;  
 }
 
 
