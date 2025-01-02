@@ -1,81 +1,62 @@
 <?php 
 header("Content-type: text/css");
 
-set_include_path($_SERVER['DOCUMENT_ROOT']);
-include ('e/modules/mysql/mysql.php');
+           // JSON fájl beolvasása a program-json.php-ból
+		   $jsonFile = 'data-source/program-json.php';
+		   include $jsonFile;
+		   $jsonData = $raw_json;
+		   $data = json_decode($jsonData, true);
 
-
+if (!$data) {
+	die("Nem sikerült beolvasni a JSON fájlt.");
+}
 
 $day = $_GET['day'];
 $first = $_GET['first_time'];
 $last = $_GET['last_time'];
-#$venues = $_GET['venues'];
 
 $v_space = '5fr';
 $end_space = '10px';
-$gap ='5'; // percek
+$gap = '5'; // percek
 $timing_space = '5px';
-
-
-
 
 echo '
 	@media screen and (min-width:600px), print {
 		.schedule {
-
 			grid-template-columns:
 			[times] 50px
-			
 ';
 
-
-$sql = 'SELECT vid,merged FROM venues';
-$result = $mysqli->query($sql);
-
-//Az egyesítéseket számolja az oszlopszám korrekcióhoz.
-$m=0;
 $venue_before = 0;
-while($row = $result->fetch_assoc()) {
+foreach ($data as $location) {
+	$venue = $location["locationHash"];
 
-	// Korrigált oszlopszám (ha van egyesített helyszín)
-	$venue = $row["vid"];
-
-	if($venue_before==0) {
-		echo '[venue-' . $row["vid"] . '-start] '.$v_space.chr(13);
-		$venue_before = $row["vid"];
-	}	else {
-
-		if($row['merged']) {
-		} else {
-			echo '[venue-' . $venue_before . '-end venue-' . $row['vid'] . '-start] ' . $v_space . chr(13);
-			$venue_before = $row["vid"];
-		}
+	if ($venue_before == 0) {
+		echo '[venue-' . $venue . '-start] ' . $v_space . chr(13);
+		$venue_before = $venue;
+	} else {
+		echo '[venue-' . $venue_before . '-end venue-' . $venue . '-start] ' . $v_space . chr(13);
+		$venue_before = $venue;
 	}
-
 }
 
-			echo '[venue-' . $venue . '-end] ' . $end_space . chr(13);
+echo '[venue-' . $venue . '-end] ' . $end_space . chr(13);
 
-			echo '
+echo '
 			;
-
 			grid-template-rows:
 				[venues] auto
-			';
+';
 
-			$t = $first;
-			do {
-						echo '	[time-' . date('Hi', $t) . '] '. $timing_space . chr(13);
-						$t = $t + ($gap * 60);
-
-			} while( $t <= $last);
+$t = $first;
+do {
+	echo '[time-' . date('Hi', $t) . '] ' . $timing_space . chr(13);
+	$t = $t + ($gap * 60);
+} while ($t <= $last);
 
 echo '
 			;
 		}
 	}
 ';
-
-
-$mysqli->close();
 ?>
