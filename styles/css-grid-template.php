@@ -3,7 +3,7 @@ header("Content-type: text/css");
 
 // A JSON formátumú adat betöltése az include segítségével
 $return_json = true;
-include($_SERVER['DOCUMENT_ROOT'] . '/program-json.php'); // Add meg a pontos elérési utat
+include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-json.php'); // Add meg a pontos elérési utat
 $jsonData = $raw_json;
 $jsonData = json_decode($jsonData, true);
 if (!$jsonData) {
