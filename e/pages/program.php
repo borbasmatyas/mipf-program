@@ -1,10 +1,10 @@
 <?php
-
+/*
 // JSON fájl beolvasása
 $jsonFile = 'path/to/your/jsonfile.json';
 $jsonData = file_get_contents($jsonFile);
 $data = json_decode($jsonData, true);
-
+*/
 if (!$data) {
 	die("Nem sikerült beolvasni a JSON fájlt.");
 }

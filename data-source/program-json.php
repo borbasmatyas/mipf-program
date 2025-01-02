@@ -36,7 +36,7 @@ $xpath = new DOMXPath($dom);
 
 // Az összes helyszín beolvasása
 $locations = $xpath->query('//div[contains(@class, "swiper-slide locations")]');
-$data = [];
+$raw_json = [];
 
 foreach ($locations as $location) {
     // Helyszín neve, hash és címe
@@ -72,7 +72,7 @@ foreach ($locations as $location) {
     }
 
     // Helyszín hozzáadása az adathalmazhoz
-    $data[] = [
+    $raw_json[] = [
         'locationName' => $locationName,
         'locationHash' => $locationHash,
         'locationAddress' => trim($locationAddress),
@@ -80,7 +80,13 @@ foreach ($locations as $location) {
     ];
 }
 
-// JSON generálása
-header('Content-Type: application/json; charset=utf-8');
-echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-?>
+// Ha van egy ?raw paraméter, akkor a JSON-t adjuk vissza
+if (isset($_GET['raw'])) {
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($raw_json, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+
+
+

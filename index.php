@@ -25,7 +25,8 @@ header('X-Robots-Tag: noindex, nofollow, noarchive');
 
             // JSON fájl beolvasása a program-json.php-ból
             $jsonFile = 'data-source/program-json.php';
-            $jsonData = file_get_contents($jsonFile);
+			include $jsonFile;
+            $jsonData = $raw_json;
             $data = json_decode($jsonData, true);
 
             if (!$data) {
