@@ -36,7 +36,7 @@ $xpath = new DOMXPath($dom);
 
 // Az összes helyszín beolvasása
 $locations = $xpath->query('//div[contains(@class, "swiper-slide locations")]');
-$json_array = [];
+$json_data = [];
 
 foreach ($locations as $location) {
     // Helyszín neve, hash és címe
@@ -48,15 +48,17 @@ foreach ($locations as $location) {
     $programs = [];
     $programItems = $xpath->query('.//article[contains(@class, "programs-item")]', $location);
     $currentDateTime = new DateTime("$eventDate $startTime");
+    $previousTime = new DateTime($startTime);
     foreach ($programItems as $program) {
         $time = $xpath->query('.//span', $program)->item(0)->textContent;
         $title = $xpath->query('.//h3', $program)->item(0)->textContent;
 
         // Kezdési időpont kiszámítása
         $programStartTime = DateTime::createFromFormat('H:i', trim($time));
-        if ($programStartTime < new DateTime($startTime)) {
+        if ($programStartTime < $previousTime) {
             $currentDateTime->modify('+1 day');
         }
+        $previousTime = $programStartTime;
         $programStartDateTime = clone $currentDateTime;
         $programStartDateTime->setTime($programStartTime->format('H'), $programStartTime->format('i'));
 
@@ -72,7 +74,7 @@ foreach ($locations as $location) {
     }
 
     // Helyszín hozzáadása az adathalmazhoz
-    $json_array[] = [
+    $json_data[] = [
         'locationName' => $locationName,
         'locationHash' => $locationHash,
         'locationAddress' => trim($locationAddress),
@@ -81,13 +83,14 @@ foreach ($locations as $location) {
 }
 
 
+
 if (isset($return_json)) {
     // JSON állomány létrehozása
-    $raw_json = json_encode($json_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    $raw_json = json_encode($json_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 } else {
 
     header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($json_array, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    echo json_encode($json_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     exit;  
 }
 
