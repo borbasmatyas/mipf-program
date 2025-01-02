@@ -24,7 +24,7 @@ header('X-Robots-Tag: noindex, nofollow, noarchive');
             $day = ( isset($page['segments'][1]) and is_numeric($page['segments'][1]) ) ? $page['segments'][1] : 1;
 
             // JSON fájl beolvasása a program-json.php-ból
-            $jsonFile = 'program-json.php';
+            $jsonFile = 'data-source/program-json.php';
             $jsonData = file_get_contents($jsonFile);
             $data = json_decode($jsonData, true);
 
