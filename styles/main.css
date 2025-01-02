@@ -1,0 +1,167 @@
+@charset "UTF-8"; 
+
+* {
+	margin: unset;
+	padding: unset;
+	white-space:unset;
+	line-height: unset;
+	list-style-type: none;
+	border: unset;
+	outline: unset;
+	background: unset;
+}
+
+:root {
+	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
+	font-family: ui-monospace, monospace;
+	font-size: 14px;
+	line-height: 14px;
+	color: white;
+}
+
+
+
+body {
+	background-color: #000e19;
+	margin: 0 0 0 0;
+}
+
+button, 
+input {
+	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
+	font-family: ui-monospace, monospace;
+	font-size: 14px;
+	line-height: 14px;
+	color: white;
+	cursor: pointer;
+}
+
+p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+	.foo-logo {
+		margin-top: -10px;
+		height: 150px;
+		z-index: 300;
+	}
+	
+main,
+footer {
+	max-width: 400px;
+	padding: 10px 10px 10px 10px;
+	margin: 0 auto 0 auto;
+}
+
+/*
+main:first-child {
+	width: calc(100% - 40px);
+	margin: 0 auto 0 auto;
+}
+*/
+
+h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	line-height: 1.5rem;
+	margin-bottom: 0.5em;
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.2rem;
+	margin-bottom: 0.5rem;
+}
+
+
+article {
+	padding: 25px 10px 25px 10px;
+	font-size: 1rem;
+	margin: 0 auto 0 auto;
+	margin-top: 0px;
+	text-align: center;
+}
+
+
+	article:first-of-type {
+		margin-top: -22px;
+	}
+
+	article.box {
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 5px;
+		border: rgba(0, 0, 0, 0.5);
+	}
+
+	article p {
+		text-align: left;
+		line-height: 1.2em;
+	}
+
+	article.fentvonal {
+		margin-top: 25px;
+		border-top: 1px solid #002441;
+	}
+
+/*
+
+	FOOTER
+
+*/
+
+footer {
+	max-width: 400px;
+	text-align: center;
+	margin: 25px auto 0 auto;
+	padding-top: 25px;
+	padding-bottom: 25px;;
+	border-top: 1px solid #002441;
+	font-size: 1rem;
+}
+
+	footer p {
+		line-height: 1.5rem;
+	}
+
+	img.invertocat,
+	.repository {
+		filter: invert(1);
+		vertical-align:middle;
+	}
+
+.monospace {
+	font-family: ui-monospace, monospace;
+}
+
+
+.center {
+	text-align: center;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.red {
+	color:red;
+}
