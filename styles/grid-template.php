@@ -1,6 +1,7 @@
 <?php 
 header("Content-type: text/css");
 
+$return_json = true;
            // JSON fájl beolvasása a program-json.php-ból
 		   $jsonFile = 'data-source/program-json.php';
 		   include $jsonFile;
