@@ -9,6 +9,8 @@ if (!$data) {
 	die("Nem sikerült beolvasni a JSON fájlt.");
 }
 
+echo('----');
+
 if (
 	isset($page['segments'][1])
 	and is_numeric($page['segments'][1])
