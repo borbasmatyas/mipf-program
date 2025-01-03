@@ -87,6 +87,12 @@
 	z-index: 3;
 }
 
+.session.canceled {
+	background: rgba(255, 0, 0, 0.1);
+	text-decoration: line-through;
+	z-index: 0;
+}
+
 .session-time {
 	font-size: 0.9rem;
 	line-height: 0.9rem;
@@ -128,6 +134,8 @@
 
 
 
+
+/*
 .session {
     position: relative;
     z-index: 1;
@@ -136,9 +144,9 @@
 }
 
 .session.canceled {
-    background: rgba(255, 0, 0, 0.1); /* Halvány piros */
+    background: rgba(255, 0, 0, 0.1); 
     text-decoration: line-through;
-    z-index: 0; /* Háttérbe helyezés */
+    z-index: 0; 
 }
 
 .session[data-overlay="true"]::after {
@@ -152,3 +160,4 @@
     padding: 2px;
     border-radius: 3px;
 }
+*/
