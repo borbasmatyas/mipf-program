@@ -76,6 +76,8 @@ if (!is_array($data)) {
 </head>
 <body>
 
+	<h1>Megosztott események</h1>
+
     <div class="session-list">
         <h2>Események:</h2>
         <?php if (count($data) > 0): ?>
@@ -107,6 +109,8 @@ if (!is_array($data)) {
             <p>Nincsenek saját kiemelt eseményeid a megosztáshoz.</p>
         <?php endif; ?>
     </div>
+
+	<a href="/" class="button">Vissza a programhoz</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
