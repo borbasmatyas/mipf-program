@@ -1,8 +1,8 @@
 
 /* Barát kiemelt eseménye */
 .session.friend-highlight:not(.highlighted) {
-    border-color: rgba(255, 193, 7, 0.9); 
-	background-color: rgba(255, 193, 7, 0.5); ;
+    border-color: rgba(6, 135, 255, 0.2); 
+	background-color: rgba(6, 166, 255, 0.2); ;
 }
 
 /* Barátok listájának stílusa */
