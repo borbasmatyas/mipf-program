@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSessionClasses();
 
     // 5 percenkénti frissítés (300000 ms = 5 perc)
-    //setInterval(updateSessionClasses, 300000);
+    setInterval(updateSessionClasses, 300000);
 
     // 1 percenkénti frissítés (60000 ms = 1 perc)
-    setInterval(updateSessionClasses, 60000);
+    //setInterval(updateSessionClasses, 60000);
 });
