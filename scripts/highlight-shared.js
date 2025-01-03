@@ -29,18 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 `.session[data-venue="${venueHash}"][data-start="${startTime}"]`
             );
             if (session) {
-                // Ha már saját kiemelésként jelölve van, prioritást adunk neki
+                // Ha még nincs saját kiemelésként jelölve
                 if (!session.classList.contains("highlighted")) {
                     session.classList.add("friend-highlight"); // Barátok kiemelése
                 }
 
-                // Hozzáadjuk a barát nevét a tooltiphez
-                const currentFriends = session.getAttribute("data-friends") || "";
-                const friendList = currentFriends ? currentFriends.split(", ") : [];
-                if (!friendList.includes(friendName)) {
-                    friendList.push(friendName);
+                // Hozzáadjuk a barát nevét az esemény megjelenítéséhez
+                let friendsListElement = session.querySelector(".friends-list");
+                if (!friendsListElement) {
+                    friendsListElement = document.createElement("p");
+                    friendsListElement.classList.add("friends-list");
+                    friendsListElement.textContent = "Friends: "; // Alap szöveg
+                    session.appendChild(friendsListElement);
                 }
-                session.setAttribute("data-friends", friendList.join(", "));
+
+                // Nevek hozzáadása, ha még nem szerepelnek
+                const currentFriends = friendsListElement.textContent.replace("Friends: ", "").split(", ").filter(Boolean);
+                if (!currentFriends.includes(friendName)) {
+                    currentFriends.push(friendName);
+                    friendsListElement.textContent = "Friends: " + currentFriends.join(", ");
+                }
             }
         });
     }

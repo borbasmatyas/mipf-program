@@ -1,36 +1,13 @@
-/* Saját kiemelt esemény */
-.session.highlighted {
-    background-color: #007bff; /* Kék szín a saját kiemeléshez */
-    color: white;
-}
 
 /* Barát kiemelt eseménye */
 .session.friend-highlight:not(.highlighted) {
-    background-color: #ffc107; /* Sárga szín a barátok kiemeléséhez */
-    color: black;
+    border-color: #ffc107; /* Sárga szín a barátok kiemeléséhez */
 }
 
-/* Tooltip stílus */
-.session[data-friends]::after {
-    content: attr(data-friends); /* A barátok neveit jeleníti meg */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000; /* Tooltip háttérszín */
-    color: #fff; /* Tooltip szövegszín */
-    padding: 5px;
+/* Barátok listájának stílusa */
+.friends-list {
     font-size: 12px;
-    white-space: nowrap;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
-
-/* Tooltip láthatóság */
-.session[data-friends]:hover::after {
-    opacity: 1;
-    visibility: visible;
+    color: white;
+    margin-top: 5px;
+    font-style: italic;
 }
