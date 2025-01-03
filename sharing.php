@@ -65,6 +65,6 @@ $ownHighlighted = getCookieData($COOKIE_NAME);
         <?php endif; ?>
     </div>
 
-    <script src="sharing.js"></script>
+    <script src="/scripts/sharing.js"></script>
 </body>
 </html>
