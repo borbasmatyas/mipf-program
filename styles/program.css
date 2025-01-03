@@ -85,6 +85,8 @@
 	transition: box-shadow 1s ease-in-out;
 	text-align: left;
 	z-index: 3;
+
+	position: relative;
 }
 
 .session.canceled {

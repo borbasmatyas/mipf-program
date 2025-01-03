@@ -1,4 +1,9 @@
 .past {
-	mix-blend-mode: multiply;
-	
+	opacity: 0.5;
+}
+
+.past.cancelled {
+	text-decoration: line-through;
+	opacity: 0.25;
+	border-color: unset;
 }
