@@ -1,6 +1,13 @@
 .current-time-line {
     grid-column: 1 / -1; /* Az első oszloptól az utolsóig húzódik */
-    background-color: red;
-    height: 1px; /* A vonal vastagsága */
+    height: 0px;
+	border-top: 1px solid #f007;
+	box-shadow: 0 0 5px red;
+	z-index: 200;
     pointer-events: none; /* Az egérműveletek nem akadályozzák */
+
+    /* Animáció */
+    animation: current-time 60s linear infinite;
+    
 }
+

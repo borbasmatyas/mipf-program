@@ -11,6 +11,7 @@
 .venue-slot {
 	margin-top: 1rem;
 	margin-bottom: 0.5rem;
+	z-index: 100;
 }
 
 
@@ -55,7 +56,6 @@
 			padding: 10px 5px 5px;
 			position: sticky;
 			top: 0;
-			z-index: 100;
 		}
 
 		.session {
@@ -75,6 +75,7 @@
 	padding: 5px;
 	font-size: 1rem;
 	min-width: 200px;
+	border: 2px solid  #342b55;
 	border-left: 2px solid #4f359b;
 
 	background-color: #342b55;
@@ -110,6 +111,7 @@
 	margin: -35px 0 10px 0;
 	padding: 5px 2px 5px 2px;
 	background-color: #cbb417;
+	border-bottom: 5px solid #82730f;
 	color: white;
 	text-align: center;
 }
@@ -123,11 +125,5 @@
 	box-shadow: none;
 }
 
-.now {
-	height: 0px;
-	border-top: 1px solid #f007;
-	box-shadow: 0 0 5px red;
-	z-index: 2;
-}
 
 
