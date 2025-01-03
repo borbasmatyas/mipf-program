@@ -130,17 +130,27 @@
 
 .session {
     position: relative;
+    z-index: 1;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 2px;
 }
 
-.session.canceled::after {
-    content: "ELMARAD";
+.session.canceled {
+    background: rgba(255, 0, 0, 0.1); /* Halvány piros */
+    text-decoration: line-through;
+    z-index: 0; /* Háttérbe helyezés */
+}
+
+.session[data-overlay="true"]::after {
+    content: "Átfedés!";
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: red;
-    color: white;
-    padding: 2px 5px;
-    font-size: 12px;
+    bottom: -10px;
+    right: -10px;
+    font-size: 10px;
+    color: red;
+    background: yellow;
+    padding: 2px;
     border-radius: 3px;
-    white-space: nowrap;
 }

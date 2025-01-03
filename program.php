@@ -46,5 +46,7 @@
 
 		<script src="/scripts/scroll-to-time.js"></script>
 
+		<script src="/scripts/canceled.js"></script>
+
 	</body>
 </html>

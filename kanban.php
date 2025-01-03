@@ -35,26 +35,24 @@ foreach ($jsonData as $location) {
 
     // Programok megjelenítése
     foreach ($location['programs'] as $program) {
-        $start_time = date('Hi', strtotime($program['startTime']));
-        $end_time = date('Hi', strtotime($program['endTime']));
-        $title = htmlspecialchars($program['title'], ENT_QUOTES, 'UTF-8');
-
+		$start_time = date('Hi', strtotime($program['startTime']));
+		$end_time = date('Hi', strtotime($program['endTime']));
+		$title = htmlspecialchars($program['title'], ENT_QUOTES, 'UTF-8');
+	
 		// Esemény elmaradásának ellenőrzése
 		$isCanceled = $program['isCanceled'];
-
+	
 		// Elmaradt esemény esetén cancel class hozzáadása
-		if ($isCanceled) {
-			$cacnceledClass = ' canceled';
-		} else {
-			$cacnceledClass = '';
-		}
-
-
-        echo '<div class="session '.$canceledClass.'" data-venue="'.$venueHash.'"  data-start="'.date('Y-m-d\TH:i', strtotime($program['startTime'])).'" data-end="'.date('Y-m-d\TH:i', strtotime($program['endTime'])).'"  style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
-        echo '<span class="session-time monospace">' . date('H:i', strtotime($program['startTime'])) . '</span>' . PHP_EOL;
-        echo '<h3 class="session-title mipfeszt">' . $title . '</h3>' . PHP_EOL;
-        echo '</div>' . PHP_EOL;
-    }
+		$canceledClass = $isCanceled ? ' canceled' : '';
+	
+		// Grid overlay jelzése, ha több esemény ugyanazon időpontra esik
+		$overlayData = $isCanceled ? 'data-overlay="true"' : '';
+	
+		echo '<div class="session' . $canceledClass . '" data-venue="' . $venueHash . '" data-start="' . date('Y-m-d\TH:i', strtotime($program['startTime'])) . '" data-end="' . date('Y-m-d\TH:i', strtotime($program['endTime'])) . '" ' . $overlayData . ' style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
+		echo '<span class="session-time monospace">' . date('H:i', strtotime($program['startTime'])) . '</span>' . PHP_EOL;
+		echo '<h3 class="session-title mipfeszt">' . $title . '</h3>' . PHP_EOL;
+		echo '</div>' . PHP_EOL;
+	}
 }
 
 echo '</div>'; // schedule vége
