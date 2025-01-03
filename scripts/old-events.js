@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const startDate = new Date(dataStart);
             const endDate = new Date(dataEnd);
 
-            // Ha az aktuális idő nagyobb, mint az esemény vége
-            if (now > endDate) {
+            // Ellenőrizzük, hogy az aktuális idő meghaladta-e az esemény végét
+            if (now.getTime() > endDate.getTime()) { // Precíz időösszehasonlítás
                 session.style.opacity = "0.25"; // Átlátszóság beállítása
                 console.log(
                     `Átlátszóvá tettük: ${session.textContent.trim()} (kezdete: ${dataStart}, vége: ${dataEnd})`
