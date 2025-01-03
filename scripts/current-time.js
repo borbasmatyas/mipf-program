@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentTimeLine.classList.add("current-time-line");
     schedule.appendChild(currentTimeLine); // Hozzáadjuk a gridhez
 
-    const TEST_MODE = true;
+    const TEST_MODE = false;
     const TEST_TIME = "2025-01-04T11:09:00";
     const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
 
