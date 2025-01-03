@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 `.session[data-venue="${venueHash}"][data-start="${startTime}"]`
             );
             if (session) {
-                session.classList.add("highlighted");a
+                session.classList.add("highlighted");
             }
         });
     }

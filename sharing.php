@@ -75,7 +75,6 @@ if (!is_array($data)) {
     </style>
 </head>
 <body>
-    <h1><?= $name ?> megosztott eseményei</h1>
 
     <div class="session-list">
         <h2>Események:</h2>
