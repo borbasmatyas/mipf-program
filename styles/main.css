@@ -33,6 +33,11 @@
 	text-transform: uppercase;
 }
 
+.monospace {
+	font-family: ui-monospace, monospace;
+}
+
+
 body {
 	background-color: #0d091a;
 	margin: 0 0 0 0;
@@ -65,6 +70,18 @@ header {
 	width: 100%;
 	height: 100px;
 	padding: 10px 10px 10px 10px;;
+}
+
+/* Mobilon a header tartalma (a logo) középre van igazítva, ahogy a footer tartalma is. */
+@media screen and (max-width: 600px) {
+	header {
+		text-align: center;
+	}
+
+	footer {
+		text-align: center;
+	}
+	
 }
 
 	
@@ -153,9 +170,6 @@ footer {
 		vertical-align:middle;
 	}
 
-.monospace {
-	font-family: ui-monospace, monospace;
-}
 
 
 .center {
