@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
 
     // Ellenőrizzük, hogy mobil nézetben vagyunk-e
-    const isWideScreen = () => window.matchMedia("(min-width: 600px)").matches;
+    const isWideScreen = () => window.innerWidth >= 600;
 
     function updateCurrentTimeLine() {
         if (!isWideScreen()) {

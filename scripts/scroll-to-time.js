@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const TEST_TIME = "2025-01-05T11:30:00";
 
     // Ellenőrizzük, hogy mobil nézetben vagyunk-e
-    const isWideScreen = () => window.matchMedia("(min-width: 600px)").matches;
+    const isWideScreen = () => window.innerWidth >= 600;
 
     // Időt jelző vonal pozíciójának frissítése
     function updateCurrentTimeLine() {
@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentTimeLine.style.display = ""; // Idővonal megjelenítése nagy képernyőn
         const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
-        const gridStyles = window.getComputedStyle(schedule);
-        const gridRows = gridStyles.getPropertyValue("grid-template-rows").split(" ");
-
         const pad = (num) => num.toString().padStart(2, "0");
 
         const hours = pad(now.getHours());
@@ -49,25 +46,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Csak nagy képernyőn frissítünk időszakosan
     let refreshInterval = null;
-    if (isWideScreen()) {
+
+    function startInterval() {
         refreshInterval = setInterval(() => {
             updateCurrentTimeLine();
             scrollToCurrentTime();
-        }, 60000); // Frissítés percenként
+        }, 60000);
+    }
+
+    function stopInterval() {
+        if (refreshInterval) {
+            clearInterval(refreshInterval);
+            refreshInterval = null;
+        }
+    }
+
+    if (isWideScreen()) {
+        startInterval();
     }
 
     // Ablak méretének változását figyelő eseménykezelő
     window.addEventListener("resize", () => {
-        if (isWideScreen() && !refreshInterval) {
-            // Ha nagy képernyőre váltunk, indítsuk el a frissítést
-            refreshInterval = setInterval(() => {
-                updateCurrentTimeLine();
-                scrollToCurrentTime();
-            }, 60000);
-        } else if (!isWideScreen() && refreshInterval) {
-            // Ha kis képernyőre váltunk, állítsuk le a frissítést
-            clearInterval(refreshInterval);
-            refreshInterval = null;
+        if (isWideScreen()) {
+            if (!refreshInterval) {
+                startInterval();
+            }
+        } else {
+            stopInterval();
         }
         updateCurrentTimeLine(); // Azonnal frissítsük az idővonal állapotát
     });
