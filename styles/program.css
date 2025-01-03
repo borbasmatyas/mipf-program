@@ -1,11 +1,37 @@
 
 
 
-/* Small-screen & fallback styles */
 .session {
+	padding: 5px;
 	margin-bottom:  0.5rem;
+	box-sizing: border-box;
+	font-size: 1rem;
+	min-width: 200px;
+	border: 2px solid  #342b55;
+	border-left: 2px solid #4f359b;
+	border-bottom: 5px solid #4f359b;
+
+	background-color: #342b55;
+	color: white;
+	box-shadow: unset;
+	transition: box-shadow 1s ease-in-out;
+	text-align: left;
+	z-index: 3;
+
+	position: relative;
 }
 
+	.session.canceled {
+		opacity: 0.5;
+		z-index: 2;
+		background-color: transparent;
+		border-width: 1px;
+		border-style: dashed;
+	}
+
+		.overlapping-canceled {
+			z-index: 1;
+		}
 
 
 .venue-slot {
@@ -18,6 +44,47 @@
 .time-slot {
 	display: none;
 }
+
+
+.session-time {
+	font-size: 0.9rem;
+	line-height: 0.9rem;
+}
+
+.session-title {
+	font-weight: bold;
+	font-size: 1.1rem;
+	display: block;
+	text-align: left;
+	line-height: 1.2rem;
+}
+
+.session-venue {
+	font-size: 0.8rem;
+	color: #00a7a8;
+}
+
+
+
+.venue-slot  {
+	font-size: 2rem;
+	margin: -35px 0 10px 0;
+	padding: 5px 2px 5px 2px;
+	background-color: #cbb417;
+	border-bottom: 5px solid #82730f;
+	color: white;
+	text-align: center;
+}
+
+.venue-all {
+	display: flex;
+	justify-content: left;
+	align-items: left;
+	background: #ccc;
+	color: #000;
+	box-shadow: none;
+}
+
 
 @supports( display:grid ) {
 	@media screen and (min-width:600px), print {
@@ -71,112 +138,4 @@
 }
 
 
-.session {
-	padding: 5px;
-	font-size: 1rem;
-	min-width: 200px;
-	border: 2px solid  #342b55;
-	border-left: 2px solid #4f359b;
-	border-bottom: 5px solid #4f359b;
 
-	background-color: #342b55;
-	color: white;
-	box-shadow: unset;
-	transition: box-shadow 1s ease-in-out;
-	text-align: left;
-	z-index: 3;
-
-	position: relative;
-}
-
-.session.canceled {
-	text-decoration: line-through;
-	opacity: 0.5;
-	z-index: 0;
-}
-
-.overlapping-canceled {
-	background: rgba(255, 0, 0, 0.1);
-	text-decoration: line-through;
-	z-index: 0;
-	border: 1px solid red;
-}
-
-.session.canceled::before {
-	content: "ELMARAD!";
-	position: absolute;
-	top: 0;
-	right: 0;
-	background: red;
-	color: white;
-	padding: 2px;
-}
-
-.session-time {
-	font-size: 0.9rem;
-	line-height: 0.9rem;
-}
-
-.session-title {
-	font-weight: bold;
-	font-size: 1.1rem;
-	display: block;
-	text-align: left;
-	line-height: 1.2rem;
-}
-
-.session-venue {
-	font-size: 0.8rem;
-	color: #00a7a8;
-}
-
-
-
-.venue-slot  {
-	font-size: 2rem;
-	margin: -35px 0 10px 0;
-	padding: 5px 2px 5px 2px;
-	background-color: #cbb417;
-	border-bottom: 5px solid #82730f;
-	color: white;
-	text-align: center;
-}
-
-.venue-all {
-	display: flex;
-	justify-content: left;
-	align-items: left;
-	background: #ccc;
-	color: #000;
-	box-shadow: none;
-}
-
-
-
-
-/*
-.session {
-    position: relative;
-    z-index: 1;
-    padding: 5px;
-    margin: 2px;
-}
-
-.session.canceled {
-    background: rgba(255, 0, 0, 0.1); 
-    text-decoration: line-through;
-    z-index: 0; 
-}
-
-.session[data-overlay="true"]::after {
-    content: "Átfedés!";
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    font-size: 10px;
-    color: red;
-    background: yellow;
-    padding: 2px;
-    border-radius: 3px;
-}
-*/
