@@ -45,10 +45,7 @@ foreach ($jsonData as $location) {
 		// Elmaradt esemény esetén cancel class hozzáadása
 		$canceledClass = $isCanceled ? ' canceled' : '';
 	
-		// Grid overlay jelzése, ha több esemény ugyanazon időpontra esik
-		$overlayData = $isCanceled ? 'data-overlay="true"' : '';
-	
-		echo '<div class="session' . $canceledClass . '" data-venue="' . $venueHash . '" data-start="' . date('Y-m-d\TH:i', strtotime($program['startTime'])) . '" data-end="' . date('Y-m-d\TH:i', strtotime($program['endTime'])) . '" ' . $overlayData . ' style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
+		echo '<div class="session' . $canceledClass . '" data-venue="' . $venueHash . '" data-start="' . date('Y-m-d\TH:i', strtotime($program['startTime'])) . '" data-end="' . date('Y-m-d\TH:i', strtotime($program['endTime'])) . '" style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
 		echo '<span class="session-time monospace">' . date('H:i', strtotime($program['startTime'])) . '</span>' . PHP_EOL;
 		echo '<h3 class="session-title mipfeszt">' . $title . '</h3>' . PHP_EOL;
 		echo '</div>' . PHP_EOL;
