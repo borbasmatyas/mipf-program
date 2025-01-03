@@ -88,9 +88,19 @@
 }
 
 .session.canceled {
-	background: rgba(255, 0, 0, 0.1);
 	text-decoration: line-through;
+	opacity: 0.5;
 	z-index: 0;
+}
+
+.session.canceled::before {
+	content: "ELMARAD!";
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: red;
+	color: white;
+	padding: 2px;
 }
 
 .session-time {

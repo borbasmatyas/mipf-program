@@ -15,11 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const endDate = new Date(dataEnd);
 
             // Ellenőrizzük, hogy az aktuális idő meghaladta-e az esemény végét
-            if (now.getTime() > endDate.getTime()) { // Precíz időösszehasonlítás
-                session.style.opacity = "0.25"; // Átlátszóság beállítása
-                console.log(
-                    `Átlátszóvá tettük: ${session.textContent.trim()} (kezdete: ${dataStart}, vége: ${dataEnd})`
-                );
+            if (now.getTime() > endDate.getTime()) { 
+				// hozá adunk egy class-t
+				session.classList.add("past");
             }
         }
     });

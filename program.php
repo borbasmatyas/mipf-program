@@ -39,7 +39,8 @@
 		<script src="/scripts/current-time.js"></script>
 		<link rel="stylesheet" href="/styles/current-time.css?<?php echo date('U'); ?>">
 
-		<script src="/scripts/old-events.js"></script>
+		<script src="/scripts/past-events.js"></script>
+		<link rel="stylesheet" href="/styles/past-events.css?<?php echo date('U'); ?>">
 
 		<script src="/scripts/highlight.js"></script>
 		<link rel="stylesheet" href="/styles/highlight.css?<?php echo date('U'); ?>">
