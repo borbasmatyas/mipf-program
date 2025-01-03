@@ -41,7 +41,7 @@ foreach ($jsonData as $location) {
 
         echo '<div class="session" style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
         echo '<span class="session-time monospace">' . date('H:i', strtotime($program['startTime'])) . '</span>' . PHP_EOL;
-        echo '<h3 class="session-title">' . $title . '</h3>' . PHP_EOL;
+        echo '<h3 class="session-title mipfeszt">' . $title . '</h3>' . PHP_EOL;
         echo '</div>' . PHP_EOL;
     }
 }

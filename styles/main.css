@@ -29,6 +29,8 @@
 
 .mipfeszt {
 	font-family: 'MIPFESZT_02', sans-serif;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 body {
