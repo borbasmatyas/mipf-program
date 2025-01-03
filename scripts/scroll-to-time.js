@@ -6,29 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const TEST_MODE = true; // Teszt mód: kézi idő beállítása
     const TEST_TIME = "2025-01-05T11:30:00";
-    const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
 
-    // Képernyő méretének ellenőrzése
+    // Ellenőrizzük, hogy mobil nézetben vagyunk-e
     const isWideScreen = () => window.matchMedia("(min-width: 600px)").matches;
-
-    // Segédfüggvény: Görgessen az aktuális időhöz
-    function scrollToCurrentTime() {
-        if (!isWideScreen()) return; // Kikapcsolva kis képernyőn
-        const currentTimeElement = document.querySelector(".current-time-line");
-        if (currentTimeElement) {
-            currentTimeElement.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-    }
 
     // Időt jelző vonal pozíciójának frissítése
     function updateCurrentTimeLine() {
         if (!isWideScreen()) {
-            // Ha kis képernyő, elrejti a vonalat
-            currentTimeLine.style.display = "none";
+            currentTimeLine.style.display = "none"; // Idővonal elrejtése mobil nézetben
             return;
         }
 
-        currentTimeLine.style.display = ""; // Nagy képernyőn megjelenítés
+        currentTimeLine.style.display = ""; // Idővonal megjelenítése nagy képernyőn
+        const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
         const gridStyles = window.getComputedStyle(schedule);
         const gridRows = gridStyles.getPropertyValue("grid-template-rows").split(" ");
 
@@ -44,13 +34,41 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`Az időt jelző vonal pozíciója: ${timeRow}`);
     }
 
+    // Segédfüggvény: Görgessen az aktuális időhöz
+    function scrollToCurrentTime() {
+        if (!isWideScreen()) return; // Görgetés kikapcsolása kis képernyőn
+        const currentTimeElement = document.querySelector(".current-time-line");
+        if (currentTimeElement) {
+            currentTimeElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    }
+
     // Görgetés az aktuális időhöz oldal betöltésekor
     updateCurrentTimeLine();
     scrollToCurrentTime();
 
-    // Időszakos frissítés (pl. percenként)
-    setInterval(() => {
-        updateCurrentTimeLine();
-        scrollToCurrentTime();
-    }, 60000); // Frissítés percenként
+    // Csak nagy képernyőn frissítünk időszakosan
+    let refreshInterval = null;
+    if (isWideScreen()) {
+        refreshInterval = setInterval(() => {
+            updateCurrentTimeLine();
+            scrollToCurrentTime();
+        }, 60000); // Frissítés percenként
+    }
+
+    // Ablak méretének változását figyelő eseménykezelő
+    window.addEventListener("resize", () => {
+        if (isWideScreen() && !refreshInterval) {
+            // Ha nagy képernyőre váltunk, indítsuk el a frissítést
+            refreshInterval = setInterval(() => {
+                updateCurrentTimeLine();
+                scrollToCurrentTime();
+            }, 60000);
+        } else if (!isWideScreen() && refreshInterval) {
+            // Ha kis képernyőre váltunk, állítsuk le a frissítést
+            clearInterval(refreshInterval);
+            refreshInterval = null;
+        }
+        updateCurrentTimeLine(); // Azonnal frissítsük az idővonal állapotát
+    });
 });
