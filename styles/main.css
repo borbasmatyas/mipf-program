@@ -158,24 +158,22 @@ footer {
 }
 
 
-
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
 }
 
 header, footer {
-    width: 100%; /* Az oldal teljes szélessége */
-    max-width: 3000px; /* Példa: igazodjon a tartalom maximális szélességéhez */
-    margin: 0 auto; /* Középre igazítja a header és footer elemeket */
-    background-color: #f4f4f4; /* Példa háttérszín */
+    flex-shrink: 0; /* Ne zsugorodjon */
+    width: 100%; /* Alapértelmezett szélesség */
+    min-width: 100%; /* Igazodik a tartalomhoz */
+    background-color: #f4f4f4;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a vizuális elkülönítéshez */
 }
 
 main {
-    width: 100%; /* Az oldal tartalmának szélessége */
-    max-width: 3000px; /* Tartalom maximális szélessége */
-    margin: 0 auto; /* Középre igazítás */
-    padding: 20px;
+    flex-grow: 1; /* Növekedjen, ha szükséges */
+
 }
