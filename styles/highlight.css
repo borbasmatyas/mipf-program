@@ -1,5 +1,4 @@
 .session.highlighted {
     background-color: rgba(255, 0, 0, 0.2);
-	border: none;
-	border-bottom: 5px solid rgba(129, 0, 0, 0.1);
+	border-left-color:  rgba(200, 0, 0, 0.1);
 }
