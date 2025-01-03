@@ -41,5 +41,10 @@
 
 		<script src="/scripts/old-events.js"></script>
 
+		<script src="/scripts/highlight.js"></script>
+		<link rel="stylesheet" href="/styles/highlight.css?<?php echo date('U'); ?>">
+
+		<script src="/scripts/scroll-to-time.js"></script>
+
 	</body>
 </html>
