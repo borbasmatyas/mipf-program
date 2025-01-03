@@ -8,21 +8,26 @@
 		<link rel="stylesheet" href="/styles/main.css?<?php echo date('U'); ?>">
 		<link rel="stylesheet" href="/styles/program.css?<?php echo date('U'); ?>">
 		<link rel="stylesheet" href="/styles/css-grid-template.php?<?php echo date('U'); ?>">
+
 		<title>Program - Made in Pécs Fesztivál</title>
 	</head>
 	<body>
 		<header>
 			<img class="mipf-logo" src="/images/made-in-pecs-fesztival-logo-purple.svg" data-src="https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/images/made-in-pecs-fesztival-logo-purple.svg" alt="Made in Pécs Fesztivál logó">
 		</header>
+
+		<button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button>
+
+
 		<main>
 			<?php include($_SERVER['DOCUMENT_ROOT'] . '/kanban.php'); ?>
 		</main>
 		<footer>
 
-			<p>
+			<!--p>
 				<a href="/sharing.php" class="monospace">Események megosztása</a> 
 				
-			</p>
+			</p-->
 
 			<p>
 				A "Made in Pécs fesztivál" logó és név, valamint a betűtípus a fesztivál szervezőjének tulajdona.<br>
@@ -55,6 +60,8 @@
 		<link rel="stylesheet" href="/styles/highlight.css?<?php echo date('U'); ?>">
 		<link rel="stylesheet" href="/styles/highlight-shared.css?<?php echo date('U'); ?>">
 
+		<link rel="stylesheet" href="/styles/toggle-filter.css?<?php echo date('U'); ?>">
+		<script src="/scripts/toggle-filter.js"></script>
 
 		<script src="/scripts/canceled.js"></script>
 

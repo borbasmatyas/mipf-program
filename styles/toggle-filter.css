@@ -1,0 +1,22 @@
+.only-highlighted .session:not(.highlighted) {
+    display: none;
+}
+
+.highlight-toggle {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    padding: 10px 15px;
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-toggle.active {
+    background-color: #342b55;
+    color: #fff;
+}
