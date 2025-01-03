@@ -117,9 +117,9 @@ footer {
 	padding: 5px;
 	font-size: 1rem;
 	min-width: 200px;
-	border-left: 2px solid #002441;
+	border-left: 2px solid #4f359b;
 
-	background-color: rgba(0,0,0,0.75);
+	background-color: #342b55;
 	color: white;
 	box-shadow: unset;
 	transition: box-shadow 1s ease-in-out;
@@ -128,7 +128,7 @@ footer {
 }
 
 	.session:hover {
-		box-shadow: 0 0 20px #00335ea4;
+		box-shadow: 0 0 20px #4f359b;
 		transition: box-shadow 1s ease-in-out;
 	}
 
@@ -175,7 +175,7 @@ footer {
 	font-weight: bold;
 	margin: -35px 0 10px 0;
 	padding: 5px 2px 5px 2px;
-	background-color:#002441EE;
+	background-color:#cbb417;
 	color: white;
 	text-align: center;
 }

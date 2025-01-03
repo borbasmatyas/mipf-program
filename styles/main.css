@@ -22,7 +22,7 @@
 
 
 body {
-	background-color: #000e19;
+	background-color: #161616;
 	margin: 0 0 0 0;
 }
 
@@ -48,6 +48,7 @@ header {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	background-color: white
 }
 
 	.foo-logo {
@@ -128,7 +129,7 @@ article {
 */
 
 footer {
-	max-width: 400px;
+	max-width: 100%;
 	text-align: center;
 	margin: 25px auto 0 auto;
 	padding-top: 25px;
