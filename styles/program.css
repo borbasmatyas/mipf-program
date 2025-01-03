@@ -131,8 +131,6 @@
 .session {
     position: relative;
     z-index: 1;
-    background: white;
-    border: 1px solid #ccc;
     padding: 5px;
     margin: 2px;
 }
