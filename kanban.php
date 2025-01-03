@@ -14,7 +14,7 @@ if (!$jsonData) {
 // Kezdési és végidőpontok meghatározása
 $first_time = strtotime($jsonData[0]['programs'][0]['startTime']);
 $last_time = strtotime(end($jsonData[0]['programs'])['endTime']);
-$gap = 15; // percek
+$gap = 10; // percek
 
 // HTML Kanban tábla generálása
 echo '<div class="schedule" aria-labelledby="schedule-heading">';
@@ -22,7 +22,7 @@ echo '<div class="schedule" aria-labelledby="schedule-heading">';
 // Időrések megjelenítése
 $t = $first_time;
 while ($t <= $last_time) {
-    $class = (date('i', $t) == '00') ? 'time-primary' : 'tie-secondary';
+    $class = (date('i', $t) == '00') ? 'time-primary' : 'time-secondary';
     echo '<span class="time-slot monospace ' . $class . '" style="grid-row: time-' . date('Hi', $t) . ';">' . date('H:i', $t) . '</span>' . PHP_EOL;
     $t += $gap * 60;
 }

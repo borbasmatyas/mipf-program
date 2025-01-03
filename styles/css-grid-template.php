@@ -14,7 +14,7 @@ if (!$jsonData) {
 $first = strtotime($jsonData[0]['programs'][0]['startTime']); // Első program kezdési időpontja
 $last = strtotime(end($jsonData[0]['programs'])['endTime']);  // Utolsó program befejezési időpontja
 
-$v_space = '5fr';
+$v_space = '2fr';
 $end_space = '10px';
 $gap = '1'; // percek
 $timing_space = '0px';
