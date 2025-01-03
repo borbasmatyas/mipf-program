@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // A grid-row pozíció beállítása
             const position = gridRows[currentRowIndex];
             currentTimeLine.style.top = `${parseFloat(position)}px`; // A grid sor értékét használjuk
+            console.log("Az aktuális idő a(z) ", currentRowIndex, ". sorban van.");
         } else {
             console.warn("Az idő kívül esik a grid tartományán.");
         }
