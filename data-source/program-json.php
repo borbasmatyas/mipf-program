@@ -53,6 +53,9 @@ foreach ($locations as $location) {
 
         $time = $xpath->query('.//span', $program)->item(0)->textContent;
         $title = $xpath->query('.//h3', $program)->item(0)->textContent;
+
+        // Ellenőrizzük, hogy tartalmazza-e az "ELMARAD" szót
+        $isCanceled = stripos($title, 'ELMARAD') !== false;
         
         // A kezdő időpont helyes beállítása
         $programStartTime = DateTime::createFromFormat('Y-m-d H:i', "$eventDate $time");
@@ -77,6 +80,7 @@ foreach ($locations as $location) {
             'startTime' => $programStartTime->format('Y-m-d H:i'),
             'endTime' => $programEndTime->format('Y-m-d H:i'),
             'title' => trim($title),
+            'isCancelled' => $isCanceled
         ];
         
     }

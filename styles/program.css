@@ -128,3 +128,19 @@
 
 
 
+.session {
+    position: relative;
+}
+
+.session.canceled::after {
+    content: "ELMARAD";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
