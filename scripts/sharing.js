@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.cookie = `${cookieName}=${encodeURIComponent(JSON.stringify(value))}; expires=${expires.toUTCString()}; path=/`;
     }
 
+    function deleteCookie(name) {
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+    }
+
     document.getElementById("saveOwn").addEventListener("click", () => {
         const data = JSON.parse(new URLSearchParams(window.location.search).get("data") || "[]");
         saveToCookie(COOKIE_NAME, data);
@@ -48,25 +52,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-// Mentett megosztások törlése
-const clearButton = document.getElementById("removeSaved");
-if (clearButton) {
-    clearButton.addEventListener("click", () => {
-        const confirmed = confirm("Biztosan törölni szeretnéd az összes mentett eseményt (saját és barátok)?");
-        if (confirmed) {
-            // Saját események törlése
-            deleteCookie(COOKIE_NAME);
+    // Mentett megosztások törlése
+    const clearButton = document.getElementById("removeSaved");
+    if (clearButton) {
+        clearButton.addEventListener("click", () => {
+            const confirmed = confirm("Biztosan törölni szeretnéd az összes megosztott eseményt?");
+            if (confirmed) {
 
-            // Barátok eseményeinek törlése
-            document.cookie.split("; ").forEach((cookie) => {
-                const [name] = cookie.split("=");
-                if (name.startsWith(COOKIE_PREFIX)) {
-                    deleteCookie(name);
-                }
-            });
+                // Mentett megosztott eseményeinek törlése
+                document.cookie.split("; ").forEach((cookie) => {
+                    const [name] = cookie.split("=");
+                    if (name.startsWith(COOKIE_PREFIX)) {
+                        deleteCookie(name);
+                    }
+                });
 
-            alert("Az összes mentett esemény törölve lett!");
-        }
-    });
-}
+                alert("Az összes mentett esemény törölve lett!");
+            }
+        });
+    }
 });
