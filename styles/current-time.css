@@ -1,8 +1,6 @@
 .current-time-line {
-    position: absolute;
-    width: 100%; /* A grid teljes szélességére nyúlik */
-    height: 1px;
+    grid-column: 1 / -1; /* Az első oszloptól az utolsóig húzódik */
     background-color: red;
-    z-index: 10; /* Biztosítja, hogy a vonal látható legyen */
-    pointer-events: none; /* Az egérrel ne lehessen rá kattintani */
+    height: 1px; /* A vonal vastagsága */
+    pointer-events: none; /* Az egérműveletek nem akadályozzák */
 }
