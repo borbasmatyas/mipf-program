@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const TEST_MODE = false;
     const TEST_TIME = "2025-01-04T11:09:00";
-    const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
 
     function updateCurrentTimeLine() {
+        const now = TEST_MODE ? new Date(TEST_TIME) : new Date(); // Minden hívásnál új időpont
         const pad = (num) => num.toString().padStart(2, "0");
 
         const hours = pad(now.getHours());
