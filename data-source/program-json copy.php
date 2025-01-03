@@ -50,35 +50,27 @@ foreach ($locations as $location) {
     $currentDateTime = new DateTime("$eventDate $startTime");
     $previousTime = new DateTime($startTime);
     foreach ($programItems as $program) {
-
         $time = $xpath->query('.//span', $program)->item(0)->textContent;
         $title = $xpath->query('.//h3', $program)->item(0)->textContent;
-        
-        // A kezdő időpont helyes beállítása
-        $programStartTime = DateTime::createFromFormat('Y-m-d H:i', "$eventDate $time");
-        if (!$programStartTime) {
-            // Hiba esetén dobjunk figyelmeztetést
-            error_log("Nem sikerült feldolgozni az időpontot: $time a következő programhoz: $title");
-            continue;
+
+        // Kezdési időpont kiszámítása
+        $programStartTime = DateTime::createFromFormat('H:i', trim($time));
+        if ($programStartTime < $previousTime) {
+            $currentDateTime->modify('+1 day');
         }
-        
-        // Ellenőrizzük, hogy az idő nem lépett-e át a következő napra
-        if ($programStartTime < $currentDateTime) {
-            $programStartTime->modify('+1 day');
-        }
-        $currentDateTime = clone $programStartTime;
-        
-        // Befejezési idő kiszámítása
-        $programEndTime = clone $programStartTime;
-        $programEndTime->modify("+$eventLength minutes");
-        
-        // Esemény hozzáadása
+        $previousTime = $programStartTime;
+        $programStartDateTime = clone $currentDateTime;
+        $programStartDateTime->setTime($programStartTime->format('H'), $programStartTime->format('i'));
+
+        // Befejezési időpont kiszámítása
+        $programEndDateTime = clone $programStartDateTime;
+        $programEndDateTime->modify("+$eventLength minutes");
+
         $programs[] = [
-            'startTime' => $programStartTime->format('Y-m-d H:i'),
-            'endTime' => $programEndTime->format('Y-m-d H:i'),
-            'title' => trim($title),
+            'startTime' => $programStartDateTime->format('Y-m-d H:i'),
+            'endTime' => $programEndDateTime->format('Y-m-d H:i'),
+            'title' => trim($title)
         ];
-        
     }
 
     // Helyszín hozzáadása az adathalmazhoz
