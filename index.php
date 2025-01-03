@@ -47,6 +47,7 @@
 		<link rel="stylesheet" href="/styles/past-events.css?<?php echo date('U'); ?>">
 
 		<script src="/scripts/highlight.js"></script>
+		<script src="/scripts/highlight-shared.js"></script>
 		<link rel="stylesheet" href="/styles/highlight.css?<?php echo date('U'); ?>">
 
 
