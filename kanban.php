@@ -39,7 +39,7 @@ foreach ($jsonData as $location) {
         $end_time = date('Hi', strtotime($program['endTime']));
         $title = htmlspecialchars($program['title'], ENT_QUOTES, 'UTF-8');
 
-        echo '<div class="session" style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
+        echo '<div class="session" data-start="'.date('H:i', strtotime($program['startTime'])).'" data-end="'.date('H:i', strtotime($program['endTime'])).'"  style="grid-column: venue-' . $venueHash . '; grid-row: time-' . $start_time . ' / time-' . $end_time . ';">' . PHP_EOL;
         echo '<span class="session-time monospace">' . date('H:i', strtotime($program['startTime'])) . '</span>' . PHP_EOL;
         echo '<h3 class="session-title mipfeszt">' . $title . '</h3>' . PHP_EOL;
         echo '</div>' . PHP_EOL;
