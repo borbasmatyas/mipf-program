@@ -1,95 +1,140 @@
+<?php
+// Saját események sütijének neve
+$COOKIE_NAME = "myHighlightedSessions";
+
+// Süti beolvasása
+function getCookieData($name) {
+    $cookieString = $_COOKIE[$name] ?? null;
+    if (!$cookieString) {
+        return [];
+    }
+    $decodedString = urldecode($cookieString); // URL-dekódolás
+    return json_decode($decodedString, true) ?: []; // JSON dekódolás
+}
+
+// Saját kiemelt események betöltése
+$ownHighlighted = getCookieData($COOKIE_NAME);
+
+// Beolvasás GET paraméterekből (megosztott események)
+$data = isset($_GET['data']) ? json_decode($_GET['data'], true) : [];
+$name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : "Ismeretlen megosztó";
+
+// Ellenőrzés: érvényes-e az adatszerkezet
+if (!is_array($data)) {
+    die("Hibás megosztott adatstruktúra!");
+}
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Megosztott események</title>
-    <link rel="stylesheet" href="/styles/main.css"> <!-- A közös stílusfájl -->
     <style>
-        .sharing-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-        }
-
-        .event-card {
-            margin-bottom: 15px;
-            padding: 10px;
-            background-color: #342b55;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d091a;
             color: white;
-            border-left: 4px solid #4f359b;
-            border-radius: 4px;
+            margin: 20px;
         }
-
-        .event-card.highlighted {
+        h1, h2 {
+            color: #ffd700;
+        }
+        .highlighted {
             background-color: #ffd700;
-            border-left-color: #b08900;
+            color: #000;
         }
-
-        .event-details {
-            font-size: 0.9rem;
+        .session-list, .share-section {
+            margin: 20px 0;
         }
-
-        .buttons {
-            display: flex;
-            gap: 10px;
+        .session-list ul {
+            list-style-type: none;
+            padding: 0;
         }
-
-        #shareURL {
-            margin-top: 10px;
-            word-break: break-word;
+        .session-list li {
+            background-color: #342b55;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #ffd700;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #e6c200;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1><?= $name ?> megosztott eseményei</h1>
-    </header>
+    <h1><?= $name ?> megosztott eseményei</h1>
 
-    <main class="sharing-container">
-        <section>
-            <h2>Megosztott események</h2>
-            <div id="eventList">
-                <?php if (count($data) > 0): ?>
-                    <?php foreach ($data as $event): ?>
-                        <div class="event-card">
-                            <h3 class="event-title"><?= htmlspecialchars($event['venueHash']) ?></h3>
-                            <div class="event-details">
-                                <strong>Kezdés:</strong> <?= htmlspecialchars($event['startTime']) ?>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p>Nincsenek megosztott események.</p>
-                <?php endif; ?>
-            </div>
-        </section>
+    <div class="session-list">
+        <h2>Események:</h2>
+        <?php if (count($data) > 0): ?>
+            <ul>
+                <?php foreach ($data as $event): ?>
+                    <li>
+                        <strong>Helyszín:</strong> <?= htmlspecialchars($event['venueHash']) ?> <br>
+                        <strong>Kezdés:</strong> <?= htmlspecialchars($event['startTime']) ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p>Nincsenek megosztott események.</p>
+        <?php endif; ?>
+    </div>
 
-        <section>
-            <h2>Mentés lehetőségek</h2>
-            <div class="buttons">
-                <button id="saveOwn">Mentés sajátként</button>
-                <button id="saveNew">Mentés új barátként</button>
-            </div>
-        </section>
+    <div id="saveOptions">
+        <h2>Mentés lehetőségek:</h2>
+        <button class="button" id="saveOwn">Mentés sajátként</button>
+        <button class="button" id="saveNew">Mentés új barátként</button>
+    </div>
 
-        <section class="share-section">
-            <h2>Saját események megosztása</h2>
-            <?php if (count($ownHighlighted) > 0): ?>
-                <button id="generateShareURL">Megosztási URL generálása</button>
-                <p id="shareURL"></p>
-            <?php else: ?>
-                <p>Nincsenek saját kiemelt eseményeid a megosztáshoz.</p>
-            <?php endif; ?>
-        </section>
-    </main>
+    <div class="share-section">
+        <h2>Saját események megosztása</h2>
+        <?php if (count($ownHighlighted) > 0): ?>
+            <button class="button" id="generateShareURL">Megosztási URL generálása</button>
+            <p id="shareURL" class="hidden"></p>
+        <?php else: ?>
+            <p>Nincsenek saját kiemelt eseményeid a megosztáshoz.</p>
+        <?php endif; ?>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Made in Pécs Fesztivál</p>
-    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const COOKIE_NAME = "myHighlightedSessions";
 
-    <script src="/scripts/sharing.js"></script>
+            // Süti beolvasása
+            function getCookie(name) {
+                const cookieString = document.cookie
+                    .split("; ")
+                    .find((row) => row.startsWith(name + "="));
+                return cookieString ? JSON.parse(decodeURIComponent(cookieString.split("=")[1])) : [];
+            }
+
+            // Megosztási URL generálása
+            const generateShareButton = document.getElementById("generateShareURL");
+            if (generateShareButton) {
+                generateShareButton.addEventListener("click", function () {
+                    const highlighted = getCookie(COOKIE_NAME);
+                    const shareData = JSON.stringify(highlighted);
+                    const shareURL = `https://mipf.dev.borbasmatyas.hu?data=${encodeURIComponent(shareData)}&name=Matyi`;
+
+                    const shareURLElement = document.getElementById("shareURL");
+                    shareURLElement.textContent = shareURL;
+                    shareURLElement.classList.remove("hidden");
+                });
+            }
+        });
+    </script>
 </body>
 </html>
