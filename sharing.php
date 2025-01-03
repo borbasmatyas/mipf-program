@@ -136,5 +136,7 @@ if (!is_array($data)) {
             }
         });
     </script>
+	<script src="/scripts/sharing.js"></script>
 </body>
 </html>
+
