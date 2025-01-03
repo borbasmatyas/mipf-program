@@ -96,6 +96,11 @@
 			grid-row-gap: 5px;
 			}
 
+			.overlapping-canceled {
+				z-index: 1;
+				display: none;
+			}
+
 		.time-slot {
 			grid-column: times;
 			display: inline-block;
