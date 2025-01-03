@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const currentFriends = friendsListElement.textContent.replace("Friends: ", "").split(", ").filter(Boolean);
                 if (!currentFriends.includes(friendName)) {
                     currentFriends.push(friendName);
-                    friendsListElement.textContent = "Friends: " + currentFriends.join(", ");
+                    friendsListElement.textContent = "" + currentFriends.join(", ");
                 }
             }
         });
