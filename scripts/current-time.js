@@ -1,32 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const schedule = document.querySelector(".schedule"); // A grid tartalmazó elem
-    const currentTimeLine = document.createElement("div"); // Létrehozzuk a vonalat
+    const schedule = document.querySelector(".schedule");
+    const currentTimeLine = document.createElement("div");
     currentTimeLine.classList.add("current-time-line");
     schedule.appendChild(currentTimeLine);
 
+    // Tesztidő: Használj valódi időt éles helyzetben
+    const TEST_MODE = true;
+    const TEST_TIME = "2025-01-04T10:09:00";
+    const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
+
     function updateCurrentTimeLine() {
-        //const now = new Date(); // Aktuális idő
-        const now = new Date("2025-01-04T10:45:00"); // Példa: manuális idő
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const totalMinutes = hours * 60 + minutes;
+        const gridStyles = window.getComputedStyle(schedule);
+        const gridRows = gridStyles.getPropertyValue("grid-template-rows").split(" ");
 
-        // Számoljuk ki, hogy melyik időréstől indul
-        const firstSlot = 600; // 10:00 = 600 perc (példa)
-        const gap = 30; // Például 30 percenként van egy időrés
-        const rowHeight = 50; // Példa: minden időrés 50px magas
+        // Az időt `time-XXXX` formátumú cellákhoz kell igazítani
+        const totalMinutes = now.getHours() * 60 + now.getMinutes(); // Teljes percek az éjfél óta
+        const startRow = 1000; // Pl. 10:00 kezdő értéke
+        const gap = 1; // Percek közti távolság a gridben
 
-        const relativeMinutes = totalMinutes - firstSlot;
-        if (relativeMinutes >= 0) {
-            const topPosition = (relativeMinutes / gap) * rowHeight;
-            currentTimeLine.style.top = `${topPosition}px`;
+        // Kiszámítjuk, melyik grid sorhoz tartozik az aktuális idő
+        const currentRowIndex = Math.floor((totalMinutes - startRow) / gap);
+
+        // Ellenőrizzük, hogy a számított index a grid határain belül van-e
+        if (currentRowIndex >= 0 && currentRowIndex < gridRows.length) {
+            // A grid-row pozíció beállítása
+            const position = gridRows[currentRowIndex];
+            currentTimeLine.style.top = `${parseFloat(position)}px`; // A grid sor értékét használjuk
         } else {
-            // Ha az idő a schedule előtt van
-            currentTimeLine.style.top = `0px`;
+            console.warn("Az idő kívül esik a grid tartományán.");
         }
     }
 
-    // Frissítsük a vonal pozícióját időnként
+    // Frissítjük a vonalat, és percenként ismételjük
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 60000); // Frissítés percenként
 });
