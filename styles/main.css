@@ -14,16 +14,22 @@
 :root {
 	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
 	font-family: ui-monospace, monospace;
-	font-size: 14px;
+	/*font-size: 14px; */
 	line-height: 16px;
 	color: white;
 }
 
 
-
 body {
-	background-color: #161616;
+	background-color: #342b55;
 	margin: 0 0 0 0;
+
+	display: flex;
+    flex-direction: column;
+    align-items: center; /* Középre igazítás */
+    margin: 0;
+
+	font-size: 14px;
 }
 
 button, 
@@ -51,17 +57,20 @@ header {
 	background-color: white
 }
 
-	.foo-logo {
-		margin-top: -10px;
-		height: 150px;
-		z-index: 300;
-	}
 	
 main,
 footer {
 	max-width: 400px;
 	padding: 10px 10px 10px 10px;
 	margin: 0 auto 0 auto;
+}
+
+header, footer {
+    width: 100%; /* Alapértelmezett szélesség */
+    max-width: 1200px; /* A grid maximális szélessége */
+    margin: 0 auto; /* Középre igazítás */
+    background-color: #f4f4f4; /* Csak példa */
+    padding: 10px;
 }
 
 /*

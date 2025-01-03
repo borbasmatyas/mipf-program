@@ -1,19 +1,5 @@
-body {
-	background-image: url("/images/erdo.jpg");
-	background-repeat: repeat-x;
-}
 
-header {
-	width: 100% !important;
-	display: flex !important;
-	justify-content: unset !important;
-	height: 150px;
-}
 
-	.foo-logo img {
-		height: 150px;
-	}
-	
 main,
 footer {
 	max-width: unset;
