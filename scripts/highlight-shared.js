@@ -29,7 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 `.session[data-venue="${venueHash}"][data-start="${startTime}"]`
             );
             if (session) {
-                session.classList.add("friend-highlight"); // Barátok kiemelése
+                // Ha már saját kiemelésként jelölve van, prioritást adunk neki
+                if (!session.classList.contains("highlighted")) {
+                    session.classList.add("friend-highlight"); // Barátok kiemelése
+                }
+
+                // Hozzáadjuk a barát nevét a tooltiphez
                 const currentFriends = session.getAttribute("data-friends") || "";
                 const friendList = currentFriends ? currentFriends.split(", ") : [];
                 if (!friendList.includes(friendName)) {
