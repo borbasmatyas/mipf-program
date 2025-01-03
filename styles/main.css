@@ -33,6 +33,10 @@
 	text-transform: uppercase;
 }
 
+.mipf-logo {
+	height: 80px;
+}
+
 .monospace {
 	font-family: ui-monospace, monospace;
 }
@@ -70,6 +74,7 @@ header {
 @media screen and (max-width: 600px) {
 	header {
 		text-align: center;
+		padding: 25px 0 25px 0;
 	}
 
 	footer {
