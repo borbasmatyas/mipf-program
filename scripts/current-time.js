@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             currentTimeLine.style.top = `${parseFloat(position)}px`; // A grid sor értékét használjuk
             console.log("Az aktuális idő a(z) ", currentRowIndex, ". sorban van.");
         } else {
-            console.warn("Az idő kívül esik a grid tartományán.");
+            console.warn("Az idő kívül esik a grid tartományán: ", currentRowIndex, " az aktuális óra és poerc: ", now.getHours(), ":", now.getMinutes());
         }
     }
 
