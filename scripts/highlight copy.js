@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const COOKIE_NAME = "myHighlightedSessions"; // Az új saját süti neve
+    const COOKIE_NAME = "highlightedSessions"; // Süti neve
     const COOKIE_EXPIRY_DAYS = 7; // Süti élettartama napokban
 
     // Süti beolvasása
