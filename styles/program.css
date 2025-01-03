@@ -25,8 +25,7 @@
 		opacity: 0.5;
 		z-index: 2;
 		background-color: transparent;
-		border-width: 1px;
-		border-style: dashed;
+		border: 1PX dashed #342b55;
 	}
 
 		.overlapping-canceled {
