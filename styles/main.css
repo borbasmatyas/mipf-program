@@ -22,7 +22,7 @@
 /* https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2 */
 @font-face {
 	font-family: 'MIPFESZT_02';
-	src: url('https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2') format('woff2');
+	src: url('/fonts/mipfeszt-regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
 }

@@ -127,7 +127,7 @@ if (!is_array($data)) {
                 generateShareButton.addEventListener("click", function () {
                     const highlighted = getCookie(COOKIE_NAME);
                     const shareData = JSON.stringify(highlighted);
-                    const shareURL = `https://mipf.dev.borbasmatyas.hu?data=${encodeURIComponent(shareData)}&name=Matyi`;
+                    const shareURL = `https://mipf.dev.borbasmatyas.hu/sharing.php?data=${encodeURIComponent(shareData)}`;
 
                     const shareURLElement = document.getElementById("shareURL");
                     shareURLElement.textContent = shareURL;
