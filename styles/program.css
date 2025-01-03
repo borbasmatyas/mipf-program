@@ -9,15 +9,12 @@
 
 
 .venue-slot {
-	/* display: none; /* hidden on small screens and browsers without grid support */
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 
 .time-slot {
-	display: none;
-}
-
-.vege {
 	display: none;
 }
 

@@ -40,12 +40,7 @@
 
 body {
 	background-color: #0d091a;
-	margin: 0 0 0 0;
-
-	display: flex;
-    flex-direction: column;
-    align-items: center; /* Középre igazítás */
-    margin: 0;
+    margin: 10px;
 }
 
 button, 
@@ -69,7 +64,7 @@ a {
 header {
 	width: 100%;
 	height: 100px;
-	padding: 10px 10px 10px 10px;;
+	padding: 25px 25px 25px 80px;;
 }
 
 /* Mobilon a header tartalma (a logo) középre van igazítva, ahogy a footer tartalma is. */
