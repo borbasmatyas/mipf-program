@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentTimeLine.classList.add("current-time-line");
     schedule.appendChild(currentTimeLine);
 
-    const TEST_MODE = true; // Teszt mód: kézi idő beállítása
+    const TEST_MODE = false; // Teszt mód: kézi idő beállítása
     const TEST_TIME = "2025-01-05T11:30:00";
 
     // Ellenőrizzük, hogy mobil nézetben vagyunk-e
