@@ -29,7 +29,7 @@
 				
 			</p-->
 
-			<button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button>
+			<!--button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button-->
 
 			<p>
 				A "Made in Pécs fesztivál" logó és név, valamint a betűtípus a fesztivál szervezőjének tulajdona.<br>
