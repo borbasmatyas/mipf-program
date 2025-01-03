@@ -159,27 +159,23 @@ footer {
 
 
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 header, footer {
-    position: fixed; /* Fixálva, hogy vízszintes görgetésnél ne mozogjanak */
-    width: 100vw; /* Az ablak teljes szélessége */
-    left: 0; /* Az ablak bal szélétől indul */
-    z-index: 1000; /* Biztosítja, hogy a tartalom fölé kerüljön */
+    width: 100%; /* Az oldal teljes szélessége */
+    max-width: 3000px; /* Példa: igazodjon a tartalom maximális szélességéhez */
+    margin: 0 auto; /* Középre igazítja a header és footer elemeket */
     background-color: #f4f4f4; /* Példa háttérszín */
+    padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a vizuális elkülönítéshez */
 }
 
-header {
-    top: 0; /* Az ablak tetején helyezkedik el */
-    height: 60px; /* Példa magasság */
-}
-
-footer {
-    bottom: 0; /* Az ablak alján helyezkedik el */
-    height: 50px; /* Példa magasság */
-}
-
 main {
-    margin-top: 60px; /* Header magassága */
-    margin-bottom: 50px; /* Footer magassága */
-    min-width: 200px; /* Tartalom szélessége */
+    width: 100%; /* Az oldal tartalmának szélessége */
+    max-width: 3000px; /* Tartalom maximális szélessége */
+    margin: 0 auto; /* Középre igazítás */
+    padding: 20px;
 }
