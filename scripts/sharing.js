@@ -47,4 +47,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+// Mentett megosztások törlése
+const clearButton = document.getElementById("removeSaved");
+if (clearButton) {
+    clearButton.addEventListener("click", () => {
+        const confirmed = confirm("Biztosan törölni szeretnéd az összes mentett eseményt (saját és barátok)?");
+        if (confirmed) {
+            // Saját események törlése
+            deleteCookie(COOKIE_NAME);
+
+            // Barátok eseményeinek törlése
+            document.cookie.split("; ").forEach((cookie) => {
+                const [name] = cookie.split("=");
+                if (name.startsWith(COOKIE_PREFIX)) {
+                    deleteCookie(name);
+                }
+            });
+
+            alert("Az összes mentett esemény törölve lett!");
+        }
+    });
+}
 });

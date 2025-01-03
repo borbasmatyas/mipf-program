@@ -30,21 +30,17 @@
 			</p>
 
 			<p>
-				<a href="/data-source/program-json.php" class="monospace">Adatforrás (JSON)</a>
-			</p>
-
-			<p>
-				Ez az oldal személyes célra készült, nem hivatalos. Az oldal tartalmáért és a rajta megjelenő adatokért a készítő nem vállal felelősséget.
-				Az oldal a működéséhez feltétlenül szükséges sütiket használ az események kiemeléséhez, és a megosztott események megjelenítéséhez. Ezeknek a sütiknek az élettartama 7 nap.
-				Az oldal használatával elfogadod a sütik használatát.
-				Az oldalon semmilyen statisztikai vagy más jellegű adatgyűjtés, valamint profilalkotás nem történik.
-				Az oldal nem használ semmilyen követőkódot.
-				Az oldalon nem történik adatkezelés.
+				Ez az oldal személyes célra készült, nem hivatalos tartalom. Az oldal készítője nem vállal felelősséget a megjelenített adatokért és azok tartalmáért. Az oldal működéséhez kizárólag az események kiemeléséhez és a megosztott események megjelenítéséhez szükséges sütiket használ, amelyek élettartama 7 nap. Az oldal használatával elfogadod ezeknek a sütiknek a használatát. Az oldalon semmilyen statisztikai adatgyűjtés, profilalkotás vagy követőkód alkalmazása nem történik, és adatkezelés sem valósul meg.
 			</p>
 
 			<p>
 				<img class="invertocat" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABeklEQVRIidXUPU8VURSF4YeLgIQES0JhQSeQGPA3mChfkQgVhR1/g4QQNVJaameorCy0sLO2JRAQOoNKTEhosJJLMTO5w+YMM5eOlZzcj73Wu+ec2TncdvXU1HvxFMuYxv088xvf8Rmf8P8mzZ9gH+2adYi5bsA9WMd5A3ixzrGp/kTARhfguDbq4HMh8AgL2E7AfmAJD8L/M1XwO7LzLJv78togpvLPQTzEvbzWGzJ7pdwlLSaecqxuyxhJ5BaKYqtkXArBA9k41ulUdlxlRRbYCU/xvAG80LOQ3U6Z/gbTcBcNhkP2pCiUj6i/C2BUnP+7qQY/g6ly3BKaDb+PU6Ytl7d5hPEG8An8CtmPKWNqTP/hVQ6JmsTr3BNzL1IN+nQutzV8KQXeJvwfEuC2bLQHqrY7L7u4zjCKr/iTf0/tINVgpQpe6GVufFPjayXg7+rgdK7rNnbx7RpvGf5edp811mOdd3Jdg2MVL7WJWq7OeFmrGLop/HboAtvUneYxMJW3AAAAAElFTkSuQmCC"/>
 				<a class="monospace" href="https://github.com/borbasmatyas" target="_blank">@borbasmatyas</a> 
+			</p>
+
+			<p>
+				<a href="/data-source/program-json.php" class="monospace">Adatforrás (JSON)</a>
+			</p>
 
 		</footer>
 

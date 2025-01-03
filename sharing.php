@@ -100,6 +100,8 @@ if (!is_array($data)) {
         <button class="button" id="saveNew">Mentés új barátként</button>
     </div>
 
+    <button class="button" id="removeSaved">Mentett megosztások törlése</button>
+
     <div class="share-section">
         <h2>Saját események megosztása</h2>
         <?php if (count($ownHighlighted) > 0): ?>
@@ -138,6 +140,8 @@ if (!is_array($data)) {
                 });
             }
         });
+
+
     </script>
 	<script src="/scripts/sharing.js"></script>
 </body>
