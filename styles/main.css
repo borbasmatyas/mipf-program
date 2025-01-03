@@ -16,12 +16,23 @@
 	font-family: ui-monospace, monospace;
 	font-size: 14px; 
 	line-height: 20px;
-	color: white;
+	color: rgb(255, 255, 255);
 }
 
+/* https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2 */
+@font-face {
+	font-family: 'mipfeszt';
+	src: url('https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.mipfeszt {
+	font-family: 'mipfeszt', sans-serif;
+}
 
 body {
-	background-color: white;
+	background-color: #0d091a;
 	margin: 0 0 0 0;
 
 	display: flex;
@@ -50,8 +61,8 @@ a {
 
 header {
 	width: 100%;
-
-	background-color: white
+	height: 100px;
+	padding: 10px 10px 10px 10px;;
 }
 
 	
@@ -157,23 +168,3 @@ footer {
 	color:red;
 }
 
-
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-}
-
-header, footer {
-    flex-shrink: 0; /* Ne zsugorodjon */
-    width: 100%; /* Alapértelmezett szélesség */
-    min-width: 100%; /* Igazodik a tartalomhoz */
-    background-color: #f4f4f4;
-    padding: 10px;
-}
-
-main {
-    flex-grow: 1; /* Növekedjen, ha szükséges */
-
-}

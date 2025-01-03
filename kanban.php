@@ -14,7 +14,7 @@ if (!$jsonData) {
 // Kezdési és végidőpontok meghatározása
 $first_time = strtotime($jsonData[0]['programs'][0]['startTime']);
 $last_time = strtotime(end($jsonData[0]['programs'])['endTime']);
-$gap = 30; // percek
+$gap = 15; // percek
 
 // HTML Kanban tábla generálása
 echo '<div class="schedule" aria-labelledby="schedule-heading">';
@@ -31,7 +31,7 @@ while ($t <= $last_time) {
 foreach ($jsonData as $location) {
     $venueHash = $location['locationHash'];
     $venueName = $location['locationName'];
-    echo '<span class="venue-slot" aria-hidden="true" style="grid-column: venue-' . $venueHash . '; grid-row: venues;">' . $venueName . '</span>' . PHP_EOL;
+    echo '<span class="venue-slot mipfeszt" aria-hidden="true" style="grid-column: venue-' . $venueHash . '; grid-row: venues;">' . $venueName . '</span>' . PHP_EOL;
 
     // Programok megjelenítése
     foreach ($location['programs'] as $program) {

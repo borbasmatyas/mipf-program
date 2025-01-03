@@ -1,17 +1,5 @@
 
 
-main,
-footer {
-	max-width: unset;
-}
-
-footer {
-	text-align: left;
-}
-
-
-
-
 
 /* Small-screen & fallback styles */
 .session {
@@ -161,8 +149,8 @@ footer {
 	font-weight: bold;
 	margin: -35px 0 10px 0;
 	padding: 5px 2px 5px 2px;
-	background-color: white;
-	color: #cbb417;
+	background-color: #4f359b;
+	color: white;
 	text-align: center;
 }
 
