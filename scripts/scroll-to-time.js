@@ -8,8 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const TEST_TIME = "2025-01-05T11:30:00";
     const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
 
+    // Képernyő méretének ellenőrzése
+    const isWideScreen = () => window.matchMedia("(min-width: 600px)").matches;
+
     // Segédfüggvény: Görgessen az aktuális időhöz
     function scrollToCurrentTime() {
+        if (!isWideScreen()) return; // Kikapcsolva kis képernyőn
         const currentTimeElement = document.querySelector(".current-time-line");
         if (currentTimeElement) {
             currentTimeElement.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -18,6 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Időt jelző vonal pozíciójának frissítése
     function updateCurrentTimeLine() {
+        if (!isWideScreen()) {
+            // Ha kis képernyő, elrejti a vonalat
+            currentTimeLine.style.display = "none";
+            return;
+        }
+
+        currentTimeLine.style.display = ""; // Nagy képernyőn megjelenítés
         const gridStyles = window.getComputedStyle(schedule);
         const gridRows = gridStyles.getPropertyValue("grid-template-rows").split(" ");
 
