@@ -16,7 +16,7 @@
 			<img class="mipf-logo" src="/images/made-in-pecs-fesztival-logo-purple.svg" data-src="https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/images/made-in-pecs-fesztival-logo-purple.svg" alt="Made in Pécs Fesztivál logó">
 		</header>
 
-		<button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button>
+	
 
 
 		<main>
@@ -28,6 +28,8 @@
 				<a href="/sharing.php" class="monospace">Események megosztása</a> 
 				
 			</p-->
+
+			<button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button>
 
 			<p>
 				A "Made in Pécs fesztivál" logó és név, valamint a betűtípus a fesztivál szervezőjének tulajdona.<br>

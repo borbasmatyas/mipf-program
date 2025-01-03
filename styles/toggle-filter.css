@@ -3,10 +3,10 @@
 }
 
 .highlight-toggle {
-    position: fixed;
+    /*position: fixed;
     bottom: 10px;
     right: 10px;
-    z-index: 1000;
+    z-index: 1000;*/
     padding: 10px 15px;
     background-color: #ffd700;
     color: #000;
