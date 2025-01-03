@@ -40,7 +40,7 @@ foreach ($jsonData as $location) {
         $title = htmlspecialchars($program['title'], ENT_QUOTES, 'UTF-8');
 
 		// Esemény elmaradásának ellenőrzése
-		$isCanceled = $program['isCancelled'];
+		$isCanceled = $program['isCanceled'];
 
 		// Elmaradt esemény esetén cancel class hozzáadása
 		if ($isCanceled) {

@@ -80,7 +80,7 @@ foreach ($locations as $location) {
             'startTime' => $programStartTime->format('Y-m-d H:i'),
             'endTime' => $programEndTime->format('Y-m-d H:i'),
             'title' => trim($title),
-            'isCancelled' => $isCanceled
+            'isCanceled' => $isCanceled
         ];
         
     }
