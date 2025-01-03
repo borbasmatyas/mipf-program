@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Ha az aktuális idő nagyobb, mint az esemény vége
             if (now > endDate) {
-                session.style.opacity = "0.5"; // Átlátszóság beállítása
+                session.style.opacity = "0.25"; // Átlátszóság beállítása
                 console.log(
                     `Átlátszóvá tettük: ${session.textContent.trim()} (kezdete: ${dataStart}, vége: ${dataEnd})`
                 );
