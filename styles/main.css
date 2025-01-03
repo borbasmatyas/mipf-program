@@ -152,10 +152,9 @@ article {
 footer {
 	max-width: 100%;
 	margin: 25px auto 0 auto;
-	padding-top: 25px;
-	padding-bottom: 25px;;
+	padding: 25px;
 
-	font-size: 10px;
+	font-size: 1em;
 }
 
 	footer p {

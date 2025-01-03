@@ -20,7 +20,8 @@
 		<footer>
 
 			<p>
-				<a href="/sharing.php" class="monospace">Események megosztása</a>
+				<a href="/sharing.php" class="monospace">Események megosztása</a> 
+				<a href="/data-source/program-json.php" class="monospace">Adatforrás (JSON)</a>
 			</p>
 
 			<p>
@@ -32,7 +33,7 @@
 				</svg>
 				<a class="monospace" href="https://github.com/borbasmatyas/mipf-program/tree/dev">mipf-program</a>
 
-				<a href="/data-source/program-json.php" class="monospace">Adatforrás (JSON)</a>
+				
 
 
 			</p>
