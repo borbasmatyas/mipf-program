@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tesztidő: Használj valódi időt éles helyzetben
     const TEST_MODE = true;
-    const TEST_TIME = "2025-01-04T10:09:00";
+    const TEST_TIME = "2025-01-04T11:09:00";
     const now = TEST_MODE ? new Date(TEST_TIME) : new Date();
 
     function updateCurrentTimeLine() {
