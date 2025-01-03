@@ -3,7 +3,7 @@
 
 .session {
 	padding: 5px;
-	margin-bottom:  0.5rem;
+	margin-top:  0.5rem;
 	box-sizing: border-box;
 	font-size: 1rem;
 	min-width: 200px;
@@ -36,6 +36,7 @@
 .venue-slot {
 	margin-top: 1rem;
 	margin-bottom: 0.5rem;
+	position: relative;
 	z-index: 100;
 }
 
