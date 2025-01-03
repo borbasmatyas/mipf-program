@@ -27,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         console.log(`Események frissítve: ${now.toLocaleTimeString()}`);
+
+        console.log(`Frissített idő: ${now} | Teszt mód: ${TEST_MODE}`);        
+
+
     }
 
     // Első frissítés az oldal betöltésekor
