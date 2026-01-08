@@ -3,14 +3,14 @@
 }
 
 .highlight-toggle {
-    /*position: fixed;
+    position: fixed;
     bottom: 10px;
     right: 10px;
-    z-index: 1000;*/
+    z-index: 1000;
     padding: 10px 15px;
-    background-color: #ffd700;
-    color: #000;
-    border: none;
+    background-color: transparent;
+    color: var(--primary-text-color);
+    border: var(--primary-text-color) 2px solid;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
