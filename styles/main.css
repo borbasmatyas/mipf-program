@@ -63,8 +63,6 @@
 
 body {
 	background-color: var(--primary-background-color);
-	width: max-content;
-	min-width: 100%;
 }
 
 button, 
@@ -94,6 +92,9 @@ header {
 	width: 100%;
 	padding: 25px 25px 25px 80px;
 	background-color: var(--header-background-color);
+	position: sticky;
+	left: 0;
+	top: auto;
 }
 
 /* Mobilon a header tartalma (a logo) középre van igazítva */
