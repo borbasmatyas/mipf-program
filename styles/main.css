@@ -63,6 +63,8 @@
 
 body {
 	background-color: var(--primary-background-color);
+	width: max-content;
+	min-width: 100%;
 }
 
 button, 
