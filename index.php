@@ -35,7 +35,7 @@
 				
 			</p-->
 
-			<!--button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button-->
+			<button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button>
 
 			<p>
 				A "Made in Pécs fesztivál" logó és név, valamint a betűtípus a fesztivál szervezőjének tulajdona.<br>
@@ -43,7 +43,9 @@
 			</p>
 
 			<p>
-				Ez az oldal személyes célra készült, nem hivatalos tartalom. Az oldal készítője nem vállal felelősséget a megjelenített adatokért és azok tartalmáért.
+				Ez az oldal személyes célra készült, azaz nem a Made in Pécs fesztivál hivatalos weboldala, de szabadon bárki használhatja.
+				Az adatok forrása a madeinpecsfesztival.hu webhelyen található program.
+				A megjelenített programok pontosságáért sem az oldal készítője, sem a fesztivál szervezői nem vállalnak felelősséget.
 			</p>
 			<p>
 				Az oldal működéséhez kizárólag az események kiemeléséhez és a megosztott események megjelenítéséhez szükséges sütiket használ, 
@@ -72,7 +74,7 @@
                     <svg aria-hidden="true" height="18" viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M9 4c-2 0-3 1-3 3v2c0 1-1 2-2 2 1 0 2 1 2 2v2c0 2 1 3 3 3"/>
 						<path d="M15 4c2 0 3 1 3 3v2c0 1 1 2 2 2-1 0-2 1-2 2v2c0 2-1 3-3 3"/>
-					 </svg>
+					</svg>
 					<span>Adatforrás (JSON)</span>
 				</a>
 
