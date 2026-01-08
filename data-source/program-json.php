@@ -3,7 +3,7 @@
 $url = "https://madeinpecsfesztival.hu/programok/";
 
 // Esemény dátuma
-$eventDate = "2025-01-04";
+$eventDate = "2026-01-17";
 
 // Kezdő időpont
 $startTime = "10:00";
