@@ -1,19 +1,9 @@
 <?php
 
 
-// JSON adat betöltése
-$return_json = true;
-include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-json.php'); // Add meg a pontos elérési utat
-$jsonData = $raw_json;
-$jsonData = json_decode($jsonData, true);
-
-if (!$jsonData) {
-    die("Hiba: Nem sikerült betölteni a JSON adatot.");
-}
-
-// Kezdési és végidőpontok meghatározása
-$first_time = strtotime($jsonData[0]['programs'][0]['startTime']);
-$last_time = strtotime(end($jsonData[0]['programs'])['endTime']);
+include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-utils.php');
+$jsonData = load_program_json();
+[$first_time, $last_time] = get_program_time_range($jsonData);
 $gap = 10; // percek
 
 // HTML Kanban tábla generálása

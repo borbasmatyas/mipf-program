@@ -1,18 +1,9 @@
 <?php
 header("Content-type: text/css");
 
-// A JSON formátumú adat betöltése az include segítségével
-$return_json = true;
-include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-json.php'); // Add meg a pontos elérési utat
-$jsonData = $raw_json;
-$jsonData = json_decode($jsonData, true);
-if (!$jsonData) {
-    die("Hiba: Nem sikerült betölteni a JSON adatot.");
-}
-
-// A JSON alapú értékek beállítása
-$first = strtotime($jsonData[0]['programs'][0]['startTime']); // Első program kezdési időpontja
-$last = strtotime(end($jsonData[0]['programs'])['endTime']);  // Utolsó program befejezési időpontja
+include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-utils.php');
+$jsonData = load_program_json();
+[$first, $last] = get_program_time_range($jsonData);
 
 $v_space = '5fr';
 $end_space = '10px';
