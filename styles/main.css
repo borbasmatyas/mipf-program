@@ -17,6 +17,17 @@
 	font-size: 14px; 
 	line-height: 20px;
 	color: rgb(255, 255, 255);
+
+	--primary-text-color: #6e909d;
+	--secondary-text-color: #6e909d;
+	--highlight-color: #ee7a68;
+
+	--primary-background-color: #193e4d;
+	--secondary-background-color: #284d5c;
+
+	--header-background-color: #ffffff;
+
+	--event-highlight-color: #0067bb;
 }
 
 /* https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2 */
@@ -61,13 +72,18 @@ p {
 }
 
 a {
-	color: white;
+	color: var(--primary-text-color);
 	text-decoration: none;
+}
+
+a:hover {
+	color: var(--highlight-color)
 }
 
 header {
 	height: 100px;
-	padding: 25px 25px 25px 80px;;
+	padding: 25px 25px 25px 80px;
+	background-color: var(--header-background-color);
 }
 
 /* Mobilon a header tartalma (a logo) középre van igazítva, ahogy a footer tartalma is. */
@@ -128,7 +144,7 @@ article {
 	}
 
 	article.box {
-		background-color: rgba(255, 255, 255, 0.1);
+		background-color: var(--secondary-background-color);
 		border-radius: 5px;
 		border: rgba(0, 0, 0, 0.5);
 	}
@@ -153,21 +169,15 @@ footer {
 	max-width: 100%;
 	margin: 25px auto 0 auto;
 	padding: 25px;
-
 	font-size: 1em;
+
+	background-color: var(--secondary-background-color);
 }
 
 	footer p {
 		line-height: 1.5em;
 		margin-top: 1.5em;
 	}
-
-	img.invertocat,
-	.repository {
-		filter: invert(1);
-		vertical-align:middle;
-	}
-
 
 
 .center {
@@ -179,6 +189,6 @@ footer {
 }
 
 .red {
-	color:red;
+	color: var(--varning-color);
 }
 

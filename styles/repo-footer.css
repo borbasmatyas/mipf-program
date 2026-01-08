@@ -1,0 +1,32 @@
+.repo-footer-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+	flex-wrap: wrap;
+}
+
+.repo-footer-link-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6e909d;;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+	text-wrap: nowrap;
+}
+
+.repo-footer-link-item:hover {
+    color: white;
+}
+
+.repo-footer-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    stroke: currentColor;
+    fill: currentColor;
+}
