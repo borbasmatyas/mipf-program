@@ -32,7 +32,7 @@
         }
     }
 
-    .only-highlighted .session:not(.highlighted) {
-        display: initial;  
+    .session:not(.highlighted) {
+        display: unset;  
     }
 }
