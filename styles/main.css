@@ -89,6 +89,7 @@ a:hover {
 
 header {
 	height: 100px;
+	width: 100%;
 	padding: 25px 25px 25px 80px;
 	background-color: var(--header-background-color);
 }
