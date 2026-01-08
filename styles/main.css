@@ -38,9 +38,8 @@
 	--primary-background-color: #193e4d;
 	--secondary-background-color: #284d5c;
 
-
-
-	--event-highlight-color: #0067bb;
+	--event-highlight-background: #193e4d;
+	--event-highlight-border-color: #ee7a68;
 
 	font-family: ui-monospace, monospace;
 	font-size: 14px; 
