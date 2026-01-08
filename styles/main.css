@@ -107,8 +107,12 @@ main {
 	header {
 		text-align: center;
 		padding: 25px 0 25px 0;
+		background-color: var(--header-background-color)
 	}
-	
+
+	body {
+		background-color: var(--primary-background-color);
+	}
 }
 
 	
