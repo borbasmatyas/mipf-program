@@ -34,14 +34,6 @@
 		}
 
 
-.venue-slot {
-	margin-top: 1rem;
-	margin-bottom: 0.5rem;
-	position: relative;
-	z-index: 100;
-}
-
-
 .time-slot {
 	display: none;
 }
@@ -67,6 +59,8 @@
 
 
 .venue-slot  {
+	position: relative;
+	z-index: 100;
 	font-size: 2rem;
 	margin: 25px 0 10px -10px;
 	padding: 7px 3px 7px 3px;
@@ -143,6 +137,5 @@
 
 	}
 }
-
 
 
