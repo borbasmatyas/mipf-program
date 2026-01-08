@@ -61,7 +61,7 @@
 
 
 body {
-	background-color: var(--header-background-color);
+	background-color: var(--primary-background-color);
 }
 
 button, 
@@ -90,7 +90,7 @@ header {
 	height: 100px;
 	width: 100%;
 	padding: 25px 25px 25px 80px;
-	background-color: transparent;
+	background-color: var(--header-background-color);
 	left: 0;
 	top: auto;
 }
@@ -101,17 +101,17 @@ main {
 }
 
 
-/* Mobilon a header tartalma (a logo) középre van igazítva */
+
 @supports( display:grid ) {
 	@media screen and (min-width:600px), print {
 		header {
 			text-align: center;
 			padding: 25px 0 25px 0;
-			background-color: var(--header-background-color)
+			background-color: var(--primary-background-color)
 		}
 
 		body {
-			background-color: var(--primary-background-color);
+			background-color: var(--header-background-color);
 		}
 	}
 }
