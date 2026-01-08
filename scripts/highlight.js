@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const COOKIE_NAME = "myHighlightedSessions"; // Az új saját süti neve
-    const COOKIE_EXPIRY_DAYS = 7; // Süti élettartama napokban
+    const COOKIE_EXPIRY_DAYS = 10; // Süti élettartama napokban
 
     // Frissítjük a jelöléseket a süti alapján
     function applyHighlights() {

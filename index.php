@@ -49,7 +49,7 @@
 			</p>
 			<p>
 				Az oldal működéséhez kizárólag az események kiemeléséhez és a megosztott események megjelenítéséhez szükséges sütiket használ, 
-				amelyek élettartama 7 nap. Az oldal használatával elfogadod ezeknek a sütiknek a használatát. 
+				amelyek élettartama 10 nap. Az oldal használatával elfogadod ezeknek a sütiknek a használatát. 
 				Az oldalon semmilyen statisztikai adatgyűjtés, profilalkotás vagy követőkód alkalmazása nem történik, és adatkezelés sem valósul meg.
 			</p>
 
