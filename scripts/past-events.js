@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const DEBUG = false;
     const TEST_MODE = false; // Teszt mód: kézi idő beállítása
     const TEST_TIME = "2025-01-04T11:30:00";
 
@@ -26,9 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        console.log(`Események frissítve: ${now.toLocaleTimeString()}`);
-
-        console.log(`Frissített idő: ${now} | Teszt mód: ${TEST_MODE}`);        
+        if (DEBUG) {
+            console.log(`Események frissítve: ${now.toLocaleTimeString()}`);
+            console.log(`Frissített idő: ${now} | Teszt mód: ${TEST_MODE}`);
+        }
 
 
     }
@@ -40,5 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(updateSessionClasses, 300000);
 
     // 1 percenkénti frissítés (60000 ms = 1 perc)
-    //setInterval(updateSessionClasses, 60000);
+    // setInterval(updateSessionClasses, 60000);
 });

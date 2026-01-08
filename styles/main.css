@@ -93,15 +93,11 @@ header {
 	background-color: var(--header-background-color);
 }
 
-/* Mobilon a header tartalma (a logo) középre van igazítva, ahogy a footer tartalma is. */
+/* Mobilon a header tartalma (a logo) középre van igazítva */
 @media screen and (max-width: 600px) {
 	header {
 		text-align: center;
 		padding: 25px 0 25px 0;
-	}
-
-	footer {
-		text-align: center;
 	}
 	
 }

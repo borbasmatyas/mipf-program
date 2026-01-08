@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const DEBUG = false;
     const schedule = document.querySelector(".schedule");
     const currentTimeLine = document.createElement("div");
     currentTimeLine.classList.add("current-time-line");
@@ -21,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Ellenőrizzük, hogy a kívánt `time-xxxx` létezik-e a grid-ben
         const gridRows = getComputedStyle(schedule).gridTemplateRows.split(" ");
         if (!gridRows.includes(`[${timeRow}]`)) {
-            console.warn(`A ${timeRow} pozíció nem létezik a grid-ben. A vonal nem mozdul.`);
+            if (DEBUG) {
+                console.warn(`A ${timeRow} pozíció nem létezik a grid-ben. A vonal nem mozdul.`);
+            }
             return; // Ha nem létezik, ne változtassunk a vonal helyzetén
         }
 
@@ -29,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
         currentTimeLine.style.gridRow = timeRow; // Az aktuális időhöz tartozó sor
         currentTimeLine.style.gridColumn = "1 / -1"; // Az elsőtől az utolsó oszlopig
         lastValidTimeRow = timeRow; // Mentjük a legutóbbi érvényes időpozíciót
-        console.log(`Vonal pozíciója frissítve: ${timeRow}`);
+        if (DEBUG) {
+            console.log(`Vonal pozíciója frissítve: ${timeRow}`);
+        }
     }
 
     // Frissítjük a vonalat, és percenként ismételjük
