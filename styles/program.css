@@ -71,8 +71,8 @@
 	font-size: 2rem;
 	margin: -35px 0 10px 0;
 	padding: 5px 2px 5px 2px;
-	background-color: #cbb417;
-	border-bottom: 5px solid #82730f;
+	background-color: var(--highlight-color);
+	border-bottom: 5px solid color-mix(in srgb, var(--highlight-color), black 25%);
 	color: white;
 	text-align: center;
 }
@@ -109,14 +109,14 @@
 		}
 
 			.time-primary {
-				color: #cbb417;
-				border-top:1px solid #cbb417;
+				color: var(--secondary-text-color);
+				border-top:1px solid var(--highlight-color);
 				padding-left: 2px;
 			}
 			
 			.time-secondary {
-				color: #82730f;
-				border-top: 1px solid #82730f;
+				color: var(--primary-text-color);
+				border-top: 1px solid var(--primary-text-color);
 				padding-left: 2px;
 				width: 85%;
 			}

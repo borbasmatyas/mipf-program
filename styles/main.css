@@ -11,12 +11,17 @@
 	background: unset;
 }
 
+/* https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2 */
+@font-face {
+	font-family: 'MIPFESZT_02';
+	src: url('/fonts/mipfeszt-regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
 :root {
-	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
-	font-family: ui-monospace, monospace;
-	font-size: 14px; 
-	line-height: 20px;
-	color: rgb(255, 255, 255);
+
 
 	--primary-text-color: #6e909d;
 	--secondary-text-color: #6e909d;
@@ -28,15 +33,15 @@
 	--header-background-color: #ffffff;
 
 	--event-highlight-color: #0067bb;
+
+	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
+	font-family: ui-monospace, monospace;
+	font-size: 14px; 
+	line-height: 20px;
+	color: var(--primary-text-color)
+
 }
 
-/* https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2 */
-@font-face {
-	font-family: 'MIPFESZT_02';
-	src: url('/fonts/mipfeszt-regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-}
 
 .mipfeszt {
 	font-family: 'MIPFESZT_02', sans-serif;
@@ -48,14 +53,9 @@
 	height: 80px;
 }
 
-.monospace {
-	font-family: ui-monospace, monospace;
-}
-
 
 body {
-	background-color: #0d091a;
-    margin: 10px;
+	background-color: var(--primary-background-color);
 }
 
 button, 
@@ -102,7 +102,7 @@ header {
 	
 main,
 footer {
-	padding: 10px 10px 10px 10px;
+	padding: 10px 25px 10px 25px;
 	margin: 0 auto 0 auto;
 }
 
@@ -156,7 +156,7 @@ article {
 
 	article.fentvonal {
 		margin-top: 25px;
-		border-top: 1px solid #002441;
+		border-top: 1px solid red;
 	}
 
 /*
@@ -168,7 +168,6 @@ article {
 footer {
 	max-width: 100%;
 	margin: 25px auto 0 auto;
-	padding: 25px;
 	font-size: 1em;
 
 	background-color: var(--secondary-background-color);
