@@ -16,6 +16,7 @@
 .highlight-toggle.active {
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
+    border-color: var(--primary-background-color) 2px solid;
 }
 
 @supports( display:grid ) {
