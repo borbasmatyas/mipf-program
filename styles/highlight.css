@@ -1,4 +1,4 @@
 .session.highlighted {
-    background-color: color-mix(in srgb, var(--event-highlight-background), white 10%);
+    background-color: color-mix(in srgb, var(--event-highlight-background), white 25%);
 	border-left-color: var(--event-highlight-border-color);
 }
