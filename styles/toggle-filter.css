@@ -3,25 +3,19 @@
 }
 
 .highlight-toggle {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
     padding: 10px 15px;
     background-color: transparent;
     color: var(--primary-text-color);
-    border: var(--primary-text-color) 2px solid;
+    border: var(--primary-background-color) 2px solid;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .highlight-toggle.active {
-    background-color: #342b55;
-    color: #fff;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
 }
-
-
 
 @supports( display:grid ) {
 	@media screen and (min-width:600px), print {
@@ -33,6 +27,6 @@
     }
 
     .only-highlighted .session:not(.highlighted) {
-        display: block;  
+        display: initial;  
     }
 }
