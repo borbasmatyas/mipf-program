@@ -2,4 +2,5 @@
     background-color: color-mix(in srgb, var(--event-highlight-background), black 25%);
 	border-left-color: var(--event-highlight-border-color);
 	border-left-width: 3px;
+	padding-left: 9px;
 }
