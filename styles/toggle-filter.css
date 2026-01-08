@@ -20,3 +20,19 @@
     background-color: #342b55;
     color: #fff;
 }
+
+
+
+@supports( display:grid ) {
+	@media screen and (min-width:600px), print {
+
+        .highlight-toggle,
+        .highlight-toggle.active {
+            display: none;
+        }
+    }
+
+    .only-highlighted .session:not(.highlighted) {
+        display: initial;  
+    }
+}
