@@ -1,4 +1,4 @@
 .session.highlighted {
-    background-color: rgba(255, 0, 0, 0.2);
-	border-left-color:  rgba(200, 0, 0, 0.2);
+    background-color: color-mix(in srgb, var(--secondary-background-color), white 50%);
+	border-left-color: color-mix(in srgb, var(--secondary-background-color), white 50%);
 }

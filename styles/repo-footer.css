@@ -3,6 +3,7 @@
     gap: 16px;
     align-items: center;
 	flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .repo-footer-link-item {
