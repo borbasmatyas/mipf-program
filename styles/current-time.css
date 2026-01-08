@@ -8,8 +8,8 @@
         .current-time-line {
             grid-column: 1 / -1;
             height: 0px;
-            border-top: 1px solid #f007;
-            box-shadow: 0 0 5px red;
+            border-top: 2px solid #f007;
+            box-shadow: 0 0 10px red;
             z-index: 200;
             pointer-events: none; /* Az egérműveletek nem akadályozzák */
 
