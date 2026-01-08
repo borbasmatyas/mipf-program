@@ -22,19 +22,26 @@
 
 :root {
 
+	--header-background-color: #ffffff;
 
 	--primary-text-color: #6e909d;
 	--secondary-text-color: #6e909d;
+	
 	--highlight-color: #ee7a68;
+
+	--primary-time-color: #ee7a68;
+	--secondary-time-color: #193e4d;
+
+	--venu-slot-background-color: #ee7a68;
+	--venu-slot-text-color: #ffffff;
 
 	--primary-background-color: #193e4d;
 	--secondary-background-color: #284d5c;
 
-	--header-background-color: #ffffff;
+
 
 	--event-highlight-color: #0067bb;
 
-	/*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
 	font-family: ui-monospace, monospace;
 	font-size: 14px; 
 	line-height: 20px;
