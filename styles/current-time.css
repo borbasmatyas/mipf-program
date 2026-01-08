@@ -6,6 +6,7 @@
 	@media screen and (min-width:600px), print {
 
         .current-time-line {
+            display: grid;
             grid-column: 1 / -1;
             height: 0px;
             border-top: 2px solid #f007;
