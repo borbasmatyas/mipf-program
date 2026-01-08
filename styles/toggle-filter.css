@@ -23,9 +23,8 @@
         .highlight-toggle {
             display: none;
         }
-    }
-
-    .only-highlighted .session:not(.highlighted) {
-        display: block;  
+        .only-highlighted .session:not(.highlighted) {
+            display: block;  
+        }
     }
 }
