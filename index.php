@@ -5,6 +5,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex, nofollow, noarchive">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
 		<link rel="stylesheet" href="/styles/main.css?<?php echo date('U'); ?>">
 		<link rel="stylesheet" href="/styles/program.css?<?php echo date('U'); ?>">
 		<link rel="stylesheet" href="/styles/css-grid-template.php?<?php echo date('U'); ?>">
