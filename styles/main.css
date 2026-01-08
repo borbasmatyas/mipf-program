@@ -62,9 +62,9 @@
 
 body {
 	background-color: var(--primary-background-color);
-	  background-image: linear-gradient(#fff, #fff);
-  	background-size: 100% 100px;
-  	background-repeat: repeat-x;
+	background-image: linear-gradient(var(--header-background-color), var(--header-background-color));
+	background-size: 100% 100px;
+	background-repeat: repeat-x;
 }
 
 button, 
