@@ -81,6 +81,7 @@
 
 		</footer>
 
+		<script src="/scripts/cookies.js"></script>
 		<script src="/scripts/current-time.js"></script>
 		<link rel="stylesheet" href="/styles/current-time.css?<?php echo date('U'); ?>">
 

@@ -2,26 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const COOKIE_NAME = "myHighlightedSessions"; // Az új saját süti neve
     const COOKIE_EXPIRY_DAYS = 7; // Süti élettartama napokban
 
-    // Süti beolvasása
-    function getCookie(name) {
-        const cookieString = document.cookie
-            .split("; ")
-            .find((row) => row.startsWith(name + "="));
-        return cookieString ? JSON.parse(decodeURIComponent(cookieString.split("=")[1])) : [];
-    }
-
-    // Süti mentése
-    function setCookie(name, value, days) {
-        const expires = new Date();
-        expires.setDate(expires.getDate() + days);
-        document.cookie = `${name}=${encodeURIComponent(
-            JSON.stringify(value)
-        )}; expires=${expires.toUTCString()}; path=/`;
-    }
-
     // Frissítjük a jelöléseket a süti alapján
     function applyHighlights() {
-        const highlighted = getCookie(COOKIE_NAME);
+        const highlighted = CookieUtils.getCookieJson(COOKIE_NAME, []);
         highlighted.forEach(({ venueHash, startTime }) => {
             const session = document.querySelector(
                 `.session[data-venue="${venueHash}"][data-start="${startTime}"]`
@@ -37,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         session.addEventListener("click", () => {
             const venueHash = session.getAttribute("data-venue");
             const startTime = session.getAttribute("data-start");
-            const highlighted = getCookie(COOKIE_NAME);
+            const highlighted = CookieUtils.getCookieJson(COOKIE_NAME, []);
 
             const index = highlighted.findIndex(
                 (item) => item.venueHash === venueHash && item.startTime === startTime
@@ -54,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Süti frissítése
-            setCookie(COOKIE_NAME, highlighted, COOKIE_EXPIRY_DAYS);
+            CookieUtils.setCookieJson(COOKIE_NAME, highlighted, COOKIE_EXPIRY_DAYS);
         });
     });
 

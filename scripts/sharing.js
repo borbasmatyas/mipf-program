@@ -2,26 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const COOKIE_NAME = "myHighlightedSessions"; // Saját események sütije
     const COOKIE_PREFIX = "friendHighlight_"; // Barátok kiemelt eseményei előtag
 
-    function getCookie(name) {
-        const cookieString = document.cookie
-            .split("; ")
-            .find((row) => row.startsWith(name + "="));
-        return cookieString ? JSON.parse(decodeURIComponent(cookieString.split("=")[1])) : [];
-    }
-
-    function saveToCookie(cookieName, value) {
-        const expires = new Date();
-        expires.setDate(expires.getDate() + 7);
-        document.cookie = `${cookieName}=${encodeURIComponent(JSON.stringify(value))}; expires=${expires.toUTCString()}; path=/`;
-    }
-
-    function deleteCookie(name) {
-        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
-    }
-
     document.getElementById("saveOwn").addEventListener("click", () => {
         const data = JSON.parse(new URLSearchParams(window.location.search).get("data") || "[]");
-        saveToCookie(COOKIE_NAME, data);
+        CookieUtils.setCookieJson(COOKIE_NAME, data, 7);
         alert("Az események mentve lettek sajátként!");
     });
 
@@ -29,14 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = JSON.parse(new URLSearchParams(window.location.search).get("data") || "[]");
         const name = prompt("Add meg a barát nevét:", "Barát neve") || "Ismeretlen";
         const cookieName = COOKIE_PREFIX + name.replace(/\s+/g, "_");
-        saveToCookie(cookieName, data);
+        CookieUtils.setCookieJson(cookieName, data, 7);
         alert(`${name} eseményei mentve lettek!`);
     });
 
     const shareButton = document.getElementById("generateShareURL");
     if (shareButton) {
         shareButton.addEventListener("click", () => {
-            const ownHighlighted = getCookie(COOKIE_NAME);
+            const ownHighlighted = CookieUtils.getCookieJson(COOKIE_NAME, []);
             if (ownHighlighted.length > 0) {
                 const baseURL = `${window.location.origin}${window.location.pathname}`;
                 const shareURL = `${baseURL}?data=${encodeURIComponent(JSON.stringify(ownHighlighted))}&name=Saját`;
@@ -63,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.cookie.split("; ").forEach((cookie) => {
                     const [name] = cookie.split("=");
                     if (name.startsWith(COOKIE_PREFIX)) {
-                        deleteCookie(name);
+                        CookieUtils.deleteCookie(name);
                     }
                 });
 

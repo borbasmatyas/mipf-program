@@ -1,14 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const COOKIE_PREFIX = "friendHighlight_"; // Barátok eseményeinek sütielőtagja
 
-    // Süti beolvasása
-    function getCookie(name) {
-        const cookieString = document.cookie
-            .split("; ")
-            .find((row) => row.startsWith(name + "="));
-        return cookieString ? JSON.parse(decodeURIComponent(cookieString.split("=")[1])) : [];
-    }
-
     // Összes barát kiemelt eseményének feldolgozása
     function applyFriendHighlights() {
         const allCookies = document.cookie.split("; ");
@@ -16,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const [key, value] = cookie.split("=");
             if (key.startsWith(COOKIE_PREFIX)) {
                 const friendName = key.replace(COOKIE_PREFIX, "").replace(/_/g, " ");
-                const friendEvents = JSON.parse(decodeURIComponent(value));
+                const friendEvents = CookieUtils.parseCookieValue(value, []);
                 highlightFriendEvents(friendName, friendEvents);
             }
         });
