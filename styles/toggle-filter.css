@@ -6,7 +6,7 @@
     padding: 10px 15px;
     background-color: transparent;
     color: var(--primary-text-color);
-    border: var(--primary-background-color) 2px solid;
+    border: var(--primary-text-color) 2px solid;
     border-radius: 5px;
     cursor: pointer;
 
@@ -20,8 +20,7 @@
 @supports( display:grid ) {
 	@media screen and (min-width:600px), print {
 
-        .highlight-toggle,
-        .highlight-toggle.active {
+        .highlight-toggle {
             display: none;
         }
     }
