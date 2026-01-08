@@ -9,7 +9,7 @@
     border: var(--primary-background-color) 2px solid;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
 }
 
 .highlight-toggle.active {
@@ -27,6 +27,6 @@
     }
 
     .only-highlighted .session:not(.highlighted) {
-        display: initial;  
+        display: block;  
     }
 }

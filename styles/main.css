@@ -89,7 +89,7 @@ a:hover {
 header {
 	height: 100px;
 	width: 100%;
-	padding: 25px 25px 25px 80px;
+	padding: 25px 0 25px 0;
 	background-color: var(--header-background-color);
 	text-align: center;
 }
@@ -106,7 +106,7 @@ main {
 		header {
 			text-align: left;
 			padding: 25px 0 25px 0;
-			background-color: var(--primary-background-color)
+			background-color: transparent;
 		}
 
 		body {
