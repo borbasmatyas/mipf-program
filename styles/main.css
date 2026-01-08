@@ -62,7 +62,7 @@
 
 
 body {
-	background-color: var(--primary-background-color);
+	background-color: var(--header-background-color);
 }
 
 button, 
@@ -91,11 +91,17 @@ header {
 	height: 100px;
 	width: 100%;
 	padding: 25px 25px 25px 80px;
-	background-color: var(--header-background-color);
+	background-color: transparent;
 	position: sticky;
 	left: 0;
 	top: auto;
 }
+
+main {
+	background-color: var(--primary-background-color);
+	padding-bottom: 50px;
+}
+
 
 /* Mobilon a header tartalma (a logo) középre van igazítva */
 @media screen and (max-width: 600px) {
@@ -174,8 +180,8 @@ article {
 
 footer {
 	max-width: 100%;
-	margin: 25px auto 0 auto;
-	padding: 25px 25px 50px 25px;
+	margin: 0 auto 0 auto;
+	padding: 50px 25px 50px 25px;
 	font-size: 1em;
 
 	background-color: var(--secondary-background-color);
