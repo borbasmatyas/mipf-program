@@ -126,7 +126,7 @@
 			padding: 10px 5px 5px;
 			position: sticky;
 			top: 0;
-			max-width: none;
+			width: none;
 		}
 
 		.session {
