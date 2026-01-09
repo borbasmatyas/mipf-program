@@ -69,7 +69,9 @@
 	border-bottom: 5px solid color-mix(in srgb, var(--venu-slot-background-color), black 25%);
 	color: var(--venu-slot-text-color);
 	text-align: center;
-	display: inline-block
+	display: block;
+	width: fit-content;
+	max-width: 100%;
 }
 
 .venue-all {
@@ -125,6 +127,7 @@
 			padding: 10px 5px 5px;
 			position: sticky;
 			top: 0;
+			width: 100%;
 		}
 
 		.session {
@@ -138,5 +141,4 @@
 
 	}
 }
-
 
