@@ -118,7 +118,6 @@
 			<span>Adatforrás (JSON)</span>
 		</a>
 
-		?>
 
 	</div>
 

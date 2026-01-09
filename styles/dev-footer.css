@@ -7,9 +7,11 @@
     background-color: rgba(0, 0, 0, 0.3);
     padding: 10px 25px;
     opacity: 0.15;
+    transition: all 0.2s ease;
 }
     .dev-footer:hover {
         opacity: 1;
+        transition: all 0.2s ease;
     }
 
 .dev-footer-item {
@@ -25,11 +27,13 @@
     border-radius: 6px;
 	white-space: nowrap;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
     .dev-footer-item:hover {
         color: rgba(255, 255, 255, 0.9);
         opacity: 1;
+        transition: all 0.2s ease;
     }
 
 .dev-footer-icon {
