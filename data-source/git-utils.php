@@ -76,3 +76,4 @@ function get_git_info(string $repoRoot): array {
         'lastCommitDate' => $lastCommitDate,
     ];
 }
+
