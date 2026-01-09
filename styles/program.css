@@ -71,7 +71,6 @@
 	text-align: center;
 	display: block;
 	width: fit-content;
-	max-width: 100%;
 }
 
 .venue-all {
@@ -127,7 +126,7 @@
 			padding: 10px 5px 5px;
 			position: sticky;
 			top: 0;
-			width: 100%;
+			max-width: none;
 		}
 
 		.session {
