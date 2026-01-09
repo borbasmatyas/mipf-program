@@ -14,12 +14,11 @@
         transition: all 0.2s ease;
     }
 
-.dev-footer-item {
+.dev-footer .dev-footer-item {
     display: flex;
     align-items: center;
     gap: 6px;
     color: var(--primary-text-color);
-    opacity: 0.8;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
@@ -30,7 +29,17 @@
     transition: all 0.2s ease;
 }
 
-    .dev-footer-item:hover {
+.dev-footer:nor(:hover) .dev-footer-item {
+    opacity: 1;
+}
+
+
+    .dev-footer:hover .dev-footer-item {
+            opacity: 0.8;
+
+    }
+
+    .dev-footer:hover .dev-footer-item:hover {
         color: rgba(255, 255, 255, 0.9);
         opacity: 1;
         transition: all 0.2s ease;
