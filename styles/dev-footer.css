@@ -1,29 +1,31 @@
-.repo-footer-links {
+.dev-footer {
     display: flex;
     gap: 16px;
     align-items: center;
 	flex-wrap: wrap;
-    margin-top: 25px;
+    margin-top: 1px;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-.repo-footer-link-item {
+.dev-footer-item {
     display: flex;
     align-items: center;
     gap: 6px;
-    color: var(--secondary-text-color);
+    color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
     padding: 8px 12px 8px none;
     border-radius: 6px;
-	text-wrap: nowrap;
+	white-space: nowrap;
+    cursor: pointer;
 }
 
-.repo-footer-link-item:hover {
-    color: var(--highlight-color);
+.dev-footer-item:hover {
+    color: rgba(0, 0, 0, 0.9);
 }
 
-.repo-footer-icon {
+.dev-footer-icon {
     width: 20px;
     height: 20px;
     display: inline-block;
