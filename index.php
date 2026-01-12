@@ -57,7 +57,7 @@ header('Expires: 0');
 				Az oldalon semmilyen statisztikai adatgyűjtés, profilalkotás vagy követőkód alkalmazása nem történik, és adatkezelés sem valósul meg.
 			</p>
 
-			<?php include($_SERVER['DOCUMENT_ROOT'] . '/dev-footer.php'); ?>
+			<?php include($_SERVER['DOCUMENT_ROOT'] . '/src/dev-footer.php'); ?>
 
 		</footer>
 
