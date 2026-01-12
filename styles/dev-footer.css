@@ -8,6 +8,7 @@
     padding: 10px 25px;
     opacity: 0.15;
     transition: all 0.2s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
     .dev-footer:hover {
         opacity: 1;
