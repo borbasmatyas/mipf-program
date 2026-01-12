@@ -1,7 +1,7 @@
 <?php
 
 
-include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-utils.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/src/program-utils.php');
 $jsonData = load_program_json();
 [$first_time, $last_time] = get_program_time_range($jsonData);
 $gap = 10; // percek

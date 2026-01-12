@@ -1,7 +1,7 @@
 <?php
 header("Content-type: text/css");
 
-include($_SERVER['DOCUMENT_ROOT'] . '/data-source/program-utils.php');
+include($_SERVER['DOCUMENT_ROOT'] . '/src/program-utils.php');
 $jsonData = load_program_json();
 [$first, $last] = get_program_time_range($jsonData);
 
