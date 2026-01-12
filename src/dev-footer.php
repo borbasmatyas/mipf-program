@@ -29,7 +29,7 @@
 		<!-- Git branch nlv és utolsó commit dátum -->
 		<?php
 			include_once($_SERVER['DOCUMENT_ROOT'] . '/src/git-utils.php');
-			$gitInfo = get_git_info(__DIR__);
+			$gitInfo = get_git_info(dirname(__DIR__));
 			$branchName = $gitInfo['branchName'];
 			$lastCommitDate = $gitInfo['lastCommitDate'];
 
