@@ -16,24 +16,27 @@
 	</head>
 	<body>
 		<header>
-			<img class="mipf-logo" 
-				src="https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/images/made-in-pecs-fesztival-logo-purple.svg" 
-				data-src="https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/images/made-in-pecs-fesztival-logo-purple.svg" 
-				alt="Made in Pécs Fesztivál">
+			<a href="https://madeinpecsfesztival.hu/" target="_blank" title="Tovább a Made in Pécs Fesztivál hivatalos weboldalára">
+				<img class="mipf-logo" 
+					src="https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/images/made-in-pecs-fesztival-logo-purple.svg" 
+					data-src="https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/images/made-in-pecs-fesztival-logo-purple.svg" 
+					alt="Made in Pécs Fesztivál">
+			</a>
 		</header>
 
 	
-
 
 		<main>
 			<?php include($_SERVER['DOCUMENT_ROOT'] . '/src/kanban.php'); ?>
 		</main>
 		<footer>
 
-			<!--p>
-				<a href="/sharing.php" class="monospace">Események megosztása</a> 
-				
-			</p-->
+
+			<div class="mipf-promo">
+				Ha még nem tetted, feltétlenül látogasd meg a Made in Pécs fesztivál hivatalos weboldalát,
+				ahol minden fontos információt megtalálsz a rendezvényről, sőt még menő  cuccokat is vásárolhatsz:
+				<a href="https://madeinpecsfesztival.hu/" target="_blank">madeinpecsfesztival.hu</a>
+			</div>
 
 			<button id="toggleHighlighted" class="highlight-toggle">Kiemelt események megjelenítése</button>
 
@@ -47,6 +50,7 @@
 				Az adatok forrása a madeinpecsfesztival.hu webhelyen található program.
 				A megjelenített programok pontosságáért sem az oldal készítője, sem a fesztivál szervezői nem vállalnak felelősséget.
 			</p>
+
 			<p>
 				Az oldal működéséhez kizárólag az események kiemeléséhez és a megosztott események megjelenítéséhez szükséges sütiket használ, 
 				amelyek élettartama 10 nap. Az oldal használatával elfogadod ezeknek a sütiknek a használatát. 

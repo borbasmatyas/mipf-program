@@ -53,3 +53,12 @@
     stroke: currentColor;
     fill: currentColor;
 }
+
+
+@supports( display:grid ) {
+	@media screen and (min-width:600px), print {
+		.dev-footer {
+            padding-left: 80px;
+        }
+	}
+}

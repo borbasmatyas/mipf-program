@@ -100,17 +100,6 @@ main {
 	background-color: var(--primary-background-color);
 }
 
-
-
-@supports( display:grid ) {
-	@media screen and (min-width:600px), print {
-		header {
-			text-align: left;
-			margin-left: 80px;
-		}
-	}
-}
-
 	
 main,
 footer {
@@ -192,6 +181,21 @@ footer {
 		margin-top: 1.5em;
 	}
 
+	.mipf-promo {
+		background-color: var(--venu-slot-background-color);
+		border-bottom: 5px solid color-mix(in srgb, var(--venu-slot-background-color), black 25%);
+		color: var(--venu-slot-text-color);
+		padding: 2em;
+		max-width: 600px;
+		margin-top: -60px;
+
+	}
+
+	.mipf-logo a,
+	.mipf-logo a:hover {
+		text-decoration: none;
+		color: var(--venu-slot-text-color);
+	}
 
 .center {
 	text-align: center;
@@ -205,3 +209,22 @@ footer {
 	color: var(--varning-color);
 }
 
+
+@supports( display:grid ) {
+	@media screen and (min-width:600px), print {
+		header {
+			text-align: left;
+			margin-left: 80px;
+		}
+
+		.mipf-promo {
+			margin-left: 60px;
+			max-width: 600px;
+		}
+
+		footer p {
+			margin-left: 80px;
+			max-width: 600px;
+		}
+	}
+}

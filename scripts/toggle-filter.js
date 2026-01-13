@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("toggleHighlighted");
-    const rootElement = document.documentElement; // Vagy használhatod a body elemet is
+    const rootElement = document.documentElement; 
 
     function isMobileView() {
         return window.innerWidth <= 600;
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleButton.addEventListener("click", () => {
         if (!isMobileView()) {
-            alert("Ez a funkció csak mobil nézetben érhető el!");
+            console.log("Ez a funkció csak mobil nézetben érhető el!");
             return;
         }
 
