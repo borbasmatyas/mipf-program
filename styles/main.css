@@ -191,8 +191,8 @@ footer {
 
 	}
 
-	.mipf-logo a,
-	.mipf-logo a:hover {
+	.mipf-promo a,
+	.mipf-promo a:hover {
 		text-decoration: none;
 		color: var(--venu-slot-text-color);
 	}
