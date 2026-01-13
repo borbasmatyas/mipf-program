@@ -11,6 +11,7 @@
 	background: unset;
 }
 
+
 /* https://madeinpecsfesztival.hu/wp-content/themes/mipf-child/assets/fonts/mipfeszt-regular.woff2 */
 @font-face {
 	font-family: 'MIPFESZT_02';
@@ -48,6 +49,8 @@
 
 }
 
+
+html, body { background: #193e4d; }
 
 .mipfeszt {
 	font-family: 'MIPFESZT_02', sans-serif;
@@ -195,6 +198,7 @@ footer {
 	.mipf-promo a:hover {
 		text-decoration: none;
 		color: var(--venu-slot-text-color);
+		font-weight: bold;
 	}
 
 .center {

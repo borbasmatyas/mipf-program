@@ -5,12 +5,16 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex, nofollow, noarchive">
+		<meta name="theme-color" content="#193e4d">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="Fesztivál program">
 		<link rel="manifest" href="/manifest.json">
 		<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
-		<link rel="stylesheet" href="/styles/main.css?<?php echo date('U'); ?>">
-		<link rel="stylesheet" href="/styles/program.css?<?php echo date('U'); ?>">
+		<link rel="stylesheet" href="/styles/main.css">
+		<link rel="stylesheet" href="/styles/program.css">
 		<link rel="stylesheet" href="/styles/css-grid-template.php?<?php echo date('U'); ?>">
-		<link rel="stylesheet" href="/styles/dev-footer.css?<?php echo date('U'); ?>">
+		<link rel="stylesheet" href="/styles/dev-footer.css">
 
 		<title>Program - Made in Pécs Fesztivál</title>
 	</head>
