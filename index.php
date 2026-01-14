@@ -37,7 +37,7 @@
 
 			<div class="mipf-promo">
 				Ha még nem tetted, feltétlenül látogasd meg a Made in Pécs fesztivál hivatalos weboldalát,
-				ahol minden fontos információt megtalálsz a rendezvényről, sőt még menő  cuccokat is vásárolhatsz:
+				ahol minden fontos információt megtalálsz a rendezvényről, sőt még menő  dolgokat is vásárolhatsz:
 				<a href="https://madeinpecsfesztival.hu/" target="_blank">madeinpecsfesztival.hu</a>
 			</div>
 
