@@ -3,12 +3,12 @@
 Személyes, nem hivatalos programnézet a Made in Pécs Fesztivál eseményeihez. A frontenden egy CSS grid alapú, kanban-szerű időrács jelenik meg, a programok kiemelhetők, megoszthatók (lennének ha megcsináltam volna), és a lejárt vagy elmaradó események vizuálisan jelölve vannak.
 
 ## Fő funkciok
-- Programok megjelenítése időrácsban helyszínenként.
-- Aktuális idő jelölése vonallal, lejárt események halványítása.
-- Események kiemelése kattintással és mentése cookie-ba (7 nap).
+- Programok megjelenítése időrácsban helyszínenként. *
+- Aktuális idő jelölése vonallal, lejárt események halványítása. *
+- Események kiemelése kattintással és mentése cookie-ba (10 nap).
 - Megosztás saját vagy barátok kiemelt eseményeivel URL-en keresztül. _(Ez még nincs kész)_
 - Elmaradt események jelölése.
-
+* _Mobilon, fekvő módban._
 
 ## Adatforras
 A programokat a `data-source/program-json.php` a `https://madeinpecsfesztival.hu/programok/` oldalról olvassa ki, majd JSON-ként adja vissza. 
