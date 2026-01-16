@@ -1,9 +1,21 @@
 .past {
 	opacity: 0.5;
+	display: none;
 }
 
 .past.cancelled {
 	text-decoration: line-through;
 	opacity: 0.25;
 	border-color: unset;
+}
+
+
+
+
+@supports( display:grid ) {
+	@media screen and (min-width:600px), print {
+
+ .past {
+		display: unset;
+	}
 }
